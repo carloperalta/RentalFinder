@@ -2,7 +2,7 @@
 	<aside id="fh5co-hero" clsas="js-fullheight">
 		<div class="flexslider js-fullheight">
 			<ul class="slides">
-		   	<li style="background-image: url(images/slide_1.jpg);">
+		   	<li style="background-image: url('<?php echo base_url();?>bootstrap2/images/slide_21.jpg'); height: 600px; width: 101%;">
 		   		<div class="container">
 		   			<div class="col-md-12 text-center js-fullheight fh5co-property-brief slider-text">
 		   				<div class="fh5co-property-brief-inner">
