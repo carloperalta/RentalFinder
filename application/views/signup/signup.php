@@ -1,38 +1,25 @@
 
-<div class="row" style="background-image: url('<?php echo base_url();?>bootstrap2/images/slide_2.jpg'); height: 600px; width: 101%;">
+<div class="row" style="background-image: url('<?php echo base_url('assets/images/new2.jpg');?>'); height: 600px; width: 101%; background-size: 100% 100%">
   <div class="container" >
     <div class="col-md-6" style="margin: 200px 0 0 0">
-        <div class="row">
-          <div class="col-md-8">
-          </div>
-          <div class="col-md-6">
-            <div class="well">
-              <div class="container">
-                  <a href=" <?php echo base_url('Register/owner');?> "> Register Owner </a>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
+      <div class="row">
+        <a href=" <?php echo base_url('Register/owner');?> " 
+          class="well" 
+          style="display:block;margin:0;">
+            Register as Owner 
+        </a>
+      </div>
 
-          </div>
-
-        </div>
-        <div class="row">
-          <div class="col-md-8">
-          </div>
-          <div class="col-md-6">
-            <div class="well">
-              <div class="container">
-                  <a href=" <?php echo base_url('Register/tenant');?>"> Register Tenant </a>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-
-          </div>
-
-        </div>
+      <br>
+      <div class="row">
+        <a href=" <?php echo base_url('Register/tenant');?> " 
+          class="well" 
+          style="display:block;margin:0;">
+            Register as Tenant 
+        </a>
+      </div>
 
     </div>
-  </div>
+    </div>
+
 </div>

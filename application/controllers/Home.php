@@ -8,16 +8,9 @@ class Home extends CI_Controller{
 
   }
 
-  function master($page,$dataArray = null){
+  function master($page){
     $this->load->view('home/header');
-    $this->load->view($page,$dataArray);
+    $this->load->view($page);
     $this->load->view('home/footer');
-  }
-
-  function afterLogin(){
-    $data = [
-      'username' => $this->session->userdata('username')
-    ];
-    $this->master('home/after_login',$data);
   }
 }

@@ -1,4 +1,4 @@
-
+ 
   <footer id="fh5co-footer" role="contentinfo">
 
   <div class="container">
@@ -29,7 +29,7 @@
     </div>
 
       <div class="col-md-12 fh5co-copyright text-center">
-        <p>&copy; 2018 web:rental finder. All Rights Reserved. <span>Designed with <i class="icon-heart"></i> by <a href="http://rentalfinder.co/" target="_blank">rentalfinder.com</a> Demo Images by <a href="http://unsplash.com/" target="_blank">Group7</a></span></p>
+        <p>&copy; 2018 web:rental finder. All Rights Reserved. <span>Designed with <i class="icon-heart"></i> by <a href="http://rentalfinder.co/" target="_blank">rentalfinder.com</a> Demo Images by <a href="" target="_blank">Group7</a></span></p>
       </div>
 
     </div>
@@ -38,18 +38,18 @@
 
 
   <!-- jQuery -->
-  <script type="text/javascript"\ href="<?php echo base_url();?>boostrap2/js/jquery.min.js"></script>
+  <script type="text/javascript"\ href="<?php echo base_url('assets/js/jquery.min.js');?>"></script>
   <!-- jQuery Easing -->
-  <script type="text/javascript" href="<?php echo base_url();?>bootstrap2/js/jquery.easing.1.3.js"></script>
+  <script type="text/javascript" href="<?php echo base_url('assets/js/jquery.easing.1.3.js');?>"></script>
   <!-- Bootstrap -->
-  <script type="text/javascript" href="<?php echo base_url();?>bootstrap2/js/bootstrap.min.js"></script>
+  <script type="text/javascript" href="<?php echo base_url('assets/js/bootstrap.min.js');?>"></script>
   <!-- Waypoints -->
-  <script type="text/javascript" href="<?php echo base_url();?>boostrap2/js/jquery.waypoints.min.js"></script>
+  <script type="text/javascript" href="<?php echo base_url('assets//js/jquery.waypoints.min.js');?>"></script>
   <!-- Flexslider -->
-  <script type="text/javascript" href="<?php echo base_url();?>boostrap2/js/jquery.flexslider-min.js"></script>
+  <script type="text/javascript" href="<?php echo base_url('assets/js/jquery.flexslider-min.js');?>"></script>
 
   <!-- MAIN JS -->
-  <script type="text/javascript" href="<?php echo base_url();?>boostrap2/js/main.js"></script>
+  <script type="text/javascript" href="<?php echo base_url('assets/js/main.js');?>"></script>
 
 
 

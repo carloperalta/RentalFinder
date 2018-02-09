@@ -2,7 +2,41 @@
 
 class Login extends CI_Controller{
 
+  public function __construct()
+  {
+    parent::__construct();
+    $this->load->model('OwnerModel');
+    $this->load->model('TenantModel');
+    $this->load->model('UserModel');
+  }
+
   function index(){
+
+    if ($this->session->userdata()){
+
+    }
+
+    $this->form_validation->set_rules('username', 'Username', 'trim|required');
+    $this->form_validation->set_rules('password', 'Password', 'trim|required');
+
+    if ($this->form_validation->run() == TRUE) {
+        $username = addslashes($this->input->post('username'));
+        $password = hash('tiger192,3',$this->input->post('password'));
+
+        $result = $this->UserModel->getUser($username,$password);
+
+        if ($result) {
+            if($result->user_type == "TENANT"){
+              redirect('Tenant');
+            }else if($result->user_type == 'OWNER'){
+              redirect('Owner');
+            }
+        }else{
+          $this->session->set_flashdata('error', 'Username or Password is incorrect');
+        }
+
+    }
+
     $this->master('home/login');
    
   }
@@ -14,26 +48,4 @@ class Login extends CI_Controller{
 
   }
 
-  function validate(){
-    $username = addslashes($this->input->post('username'));
-    $password = addslashes($this->input->post('password'));
-
-    $array = array('username' => $username, 'password' => $password);
-    $this->db->where($array);
-    $query = $this->db->get('user');
-    $row = $query->row();
-
-    if (isset($row))
-    {
-      $userType = $row->user_type;
-      if($userType == "TENANT"){
-        redirect('Tenant');
-      }else if($userType == "OWNER"){
-        redirect('Owner');
-      }
-    }else{
-      echo "Invalid Username or Password!";
-    }
-
-  }
 }

@@ -1,134 +1,51 @@
 
-	<aside id="fh5co-hero" clsas="js-fullheight">
-		<div class="flexslider js-fullheight">
-			<ul class="slides">
-		   	<li style="background-image: url('<?php echo base_url();?>bootstrap2/images/slide_21.jpg'); height: 600px; width: 101%;">
-		   		<div class="container">
-		   			<div class="col-md-12 text-center js-fullheight fh5co-property-brief slider-text">
-		   				<div class="fh5co-property-brief-inner">
-		   					<div class="fh5co-box">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-		   						<h3><a href="#">Top 10 Affordable Villa</a></h3>
-		   						<div class="price-status">
-                             	<span class="price">Php 5,000 - 10,000 <span class="per">/Month</span> <a href="#" class="tag">For Rent</a></span>
-	                        </div>
-	                        <p>A luxurious rental property with breathtaking views and amazing infinity pool in a great vacation spot</p>
+<div class="col-md-12">
+  
+<div class="row">
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
 
-	                        <p class="fh5co-property-specification">
-                        		<span><strong>3500</strong> Sq Ft</span>  <span><strong>3</strong> Beds</span>  <span><strong>3.5</strong> Baths</span>  <span><strong>2</strong> Garages</span>
-                        	</p>
+    <!-- Wrapper for slides -->
+   <div class="carousel-inner">
+      <div class="item active">
+        <img src="<?php echo base_url() ?>assets/images/new1.jpg" alt="Image 1" style="width:100%;">
+      </div>
 
-	                        <p><a href="#" class="btn btn-primary">Learn more</a></p>
-
-
-	   						</div>
-		   				</div>
-		   			</div>
-		   		</div>
-		   	</li>
-		   	<li style="background-image: url(images/slide_2.jpg);">
-		   		<div class="container">
-		   			<div class="col-md-12 text-center js-fullheight fh5co-property-brief slider-text">
-		   				<div class="fh5co-property-brief-inner">
-		   					<div class="fh5co-box">
-		   						<h3><a href="#">15 Dormitory Of Type B</a></h3>
-		   						<div class="price-status">
-                             	<span class="price">Php 1,500 - 2,200<span class="per">/Month</span> <a href="#" class="tag">For Rent</a></span>
-	                        </div>
-	                        <p>Dormitory near at your school or workplace</p>
-	                        <p class="fh5co-property-specification">
-                        		<span><strong>2500</strong> Sq Ft</span>  <span><strong>4</strong> Beds</span>  <span><strong>1</strong> Baths</span>
-                        	</p>
-	                        <p><a href="#" class="btn btn-primary">Learn more</a></p>
-	   						</div>
-		   				</div>
-		   			</div>
-		   		</div>
-		   	</li>
-				<li style="background-image: url(images/slide_3.jpg);">
-		   		<div class="container">
-		   			<div class="col-md-12 text-center js-fullheight fh5co-property-brief slider-text">
-		   				<div class="fh5co-property-brief-inner">
-		   					<div class="fh5co-box">
-		   						<h3><a href="#">Famous Condominium in the City</a></h3>
-		   						<div class="price-status">
-                             	<span class="price">Php 10,000 - 50,000<span class="per">/Month</span> <a href="#" class="tag">For Rent</a></span>
-	                        </div>
-	                        <p>Enjoy our fantastic complex amenities</p>
-	                        <p class="fh5co-property-specification">
-                        		<span><strong>4000</strong> Sq Ft</span>  <span><strong>1-3</strong> Beds</span>  <span><strong>1-2</strong> Baths</span>
-                        	</p>
-	                        <p><a href="#" class="btn btn-primary">Learn more</a></p>
+      <div class="item">
+        <img src="<?php echo base_url() ?>assets/images/new2.jpg" alt="Image 2" style="width:100%;">
+      </div>
+    
+      <div class="item">
+        <img src="<?php echo base_url() ?>assets/images/new3.jpg" alt="Image 3" style="width:100%;">
+      </div>
+    </div>
 
 
-	   						</div>
-		   				</div>
-		   			</div>
-		   		</div>
-		   	</li>
-		   		<li style="background-image: url(images/slide_4.jpg);">
-		   		<div class="container">
-		   			<div class="col-md-12 text-center js-fullheight fh5co-property-brief slider-text">
-		   				<div class="fh5co-property-brief-inner">
-		   					<div class="fh5co-box">
-		   						<h3><a href="#">Top 5 Cheap Nightly Room Rental</a></h3>
-		   						<div class="price-status">
-                             	<span class="price">Php 5,000 - 15,000<span class="per">/Month</span> <a href="#" class="tag">For Rent</a></span>
-	                        </div>
-	                        <p>Short trip? No problem</p>
-	                        <p class="fh5co-property-specification">
-                        		<span><strong>5000</strong> Sq Ft</span>  <span><strong>2-5</strong> Beds</span>  <span><strong>2-4</strong> Baths</span>  <span><strong>1-3</strong> Pool</span>
-                        	</p>
-	                        <p><a href="#" class="btn btn-primary">Learn more</a></p>
-	   						</div>
-		   				</div>
-		   			</div>
-		   		</div>
-		   	</li>
-				<li style="background-image: url(images/slide_5.jpg);">
-		   		<div class="container">
-		   			<div class="col-md-12 text-center js-fullheight fh5co-property-brief slider-text">
-		   				<div class="fh5co-property-brief-inner">
-		   					<div class="fh5co-box">
-		   						<h3><a href="#">Apartments near Commercial Establishment</a></h3>
-		   						<div class="price-status">
-                             	<span class="price">Php 3,000 - 10,000<span class="per">/Month</span> <a href="#" class="tag">For Rent</a></span>
-	                        </div>
-	                        <p>Apartment nearest to the mall and landmarks for convenience</p>
-	                        <p class="fh5co-property-specification">
-                        		<span><strong>7000</strong> Sq Ft</span>  <span><strong>1-3</strong> Beds</span>  <span><strong>1-3</strong> Baths</span>  <span><strong>1-2</strong> Garages</span>
-                        	</p>
-	                        <p><a href="#" class="btn btn-primary">Learn more</a></p>
-	   						</div>
-		   				</div>
-		   			</div>
-		   		</div>
-		   	</li>
-				<li style="background-image: url(images/slide_6.jpg);">
-		   		<div class="container">
-		   			<div class="col-md-12 text-center js-fullheight fh5co-property-brief slider-text">
-		   				<div class="fh5co-property-brief-inner">
-		   					<div class="fh5co-box">
-		   						<h3><a href="#">Discounted Home Rental</a></h3>
-		   						<div class="price-status">
-                             	<span class="price">Php 5,000 - 7,000<span class="per">/Month</span> <a href="#" class="tag">For Rent</a></span>
-	                        </div>
-	                        <p>Rent at lowest price</p>
-	                        <p class="fh5co-property-specification">
-                        		<span><strong>5000</strong> Sq Ft</span>  <span><strong>1-3</strong> Beds</span>  <span><strong>1-3</strong> Baths</span>  <span><strong>1-2</strong> Garages</span>
-                        	</p>
-	                        <p><a href="#" class="btn btn-primary">Learn more</a></p>
-	   						</div>
-		   				</div>
-		   			</div>
-		   		</div>
-		   	</li>
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+</div>
+</div>
 
 
 
-		  	</ul>
-	  	</div>
-	</aside>
+
 	<div id="best-deal">
 		<div class="container">
 			<div class="row">
@@ -141,7 +58,7 @@
 
 					<div class="fh5co-property">
 						<figure>
-							<img src="images/slide_3.jpg" alt="Free Website Templates FreeHTML5.co" class="img-responsive">
+							<img src="<?php echo base_url() ?>bootstrap/images/slide_3.jpg" alt="Free Website Templates FreeHTML5.co" class="img-responsive">
 							<a href="#" class="tag">For Rent</a>
 						</figure>
 						<div class="fh5co-property-innter">
@@ -162,7 +79,7 @@
 
 					<div class="fh5co-property">
 						<figure>
-							<img src="images/slide_2.jpg" alt="Free Website Templates FreeHTML5.co" class="img-responsive">
+							<img src="<?php echo base_url() ?>bootstrap/images/slide_2.jpg" alt="Free Website Templates FreeHTML5.co" class="img-responsive">
 							<a href="#" class="tag">For Rent</a>
 						</figure>
 						<div class="fh5co-property-innter">
@@ -182,7 +99,7 @@
 
 					<div class="fh5co-property">
 						<figure>
-							<img src="images/slide_1.jpg" alt="Free Website Templates FreeHTML5.co" class="img-responsive">
+							<img src="<?php echo base_url() ?>bootstrap/images/slide_1.jpg" alt="Free Website Templates FreeHTML5.co" class="img-responsive">
 							<a href="#" class="tag">For Rent</a>
 						</figure>
 						<div class="fh5co-property-innter">
@@ -206,7 +123,7 @@
 
 	<div class="fh5co-section-with-image">
 
-		<img src="images/image_1.jpg" alt="" class="img-responsive">
+		<img src="<?php echo base_url() ?>bootstrap/images/image_1.jpg" alt="" class="img-responsive">
 		<div class="fh5co-box animate-box">
 			<h2>Security, Comfort, &amp; Convenience</h2>
 			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque dicta magni amet atque doloremque velit unde adipisci omnis hic quaerat.</p>
@@ -248,7 +165,7 @@
 
 
 
-	<div class="fh5co-cta" style="background-image: url(images/slide_4.jpg);">
+	<div class="fh5co-cta" style="background-image: url<?php echo base_url() ?>bootstrap/images/slide_4.jpg);">
 		<div class="overlay"></div>
 		<div class="container">
 			<div class="col-md-12 text-center animate-box" data-animate-effect="fadeIn">

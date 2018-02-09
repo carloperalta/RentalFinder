@@ -1,46 +1,78 @@
-<div class="row" style="background-image: url('<?php echo base_url();?>bootstrap2/images/slide_2.jpg'); height: 100%; width: 101%;">
+<div class="row" style="background-image: url('<?php echo base_url();?>bootstrap/images/slide_2.jpg'); height: 100%; width: 100% 100%;">
 
 <div class="row" style="margin: 150px 0 0 0">
   <div class="col-md-4">
   </div>
 
   <div class="container">
-    <div class="col-md-5">
+    <div class="col-md-6">
+
         <div class="well">
 
-          <form class="" action="<?php echo base_url();?>Login/validate" method="post">
-              <h1>Tenant Registration</h1>
+          <h1>Tenant Registration</h1>
 
-              <label><b>First Name:</b></label>
-              <input type="text" name="first name" class="form-control"placeholder="Enter First Name">
+          <?php echo validation_errors('<div class="alert alert-danger">','</div>'); ?>
 
-              <label><b>Middle Name:</b></label>
-              <input type="text" name="middle initial" class="form-control"placeholder="Enter Middle Initial">
+          <form class="" action="" method="POST">
 
-              <label><b>Last Name:</b></label>
-              <input type="text" name="last name" class="form-control"placeholder="Enter Last Name">
+              <div class="form-group">
+                <label for="firstname"><b>First Name:</b></label>
+                <input type="text" name="firstname" id="firstname" class="form-control" required placeholder="Enter First Name">
+              </div>
 
-              <label><b>Birthdate:</b></label>
-              <input type="date" name="birthdate" class="form-control">
+              <div class="form-group">    
+                <label for="middlename"><b>Middle Name:</b></label>
+                <input type="text" name="middlename" id="middlename" class="form-control" required placeholder="Enter Middle Name">
+              </div>
 
-              <label><b>Contact Number:</b></label>
-              <input type="text" name="contact number" class="form-control"placeholder="Enter Contact Number">
+              <div class="form-group">
+                <label for="lastname"><b>Last Name:</b></label>
+                <input type="text" name="lastname" id="lastname" class="form-control" required placeholder="Enter Last Name">
+              </div>
 
-              <label><b>Email Address:</b></label>
-              <input type="text" name="email" class="form-control"placeholder="Enter Email">
+              <div class="form-group">
+                <label for="gender">Gender:</label>
+                <select name="gender" class="form-control" id="gender" required>
+                  <option value="male">Male</option>
+                  <option value="female">Female</option>
+                </select>
+              </div>
 
-              <label><b>Username:</b></label>
-              <input type="text" name="username" class="form-control"placeholder="Enter Username">
+              <div class="form-group">
+                <label for="birthdate"><b>Birthdate:</b></label>
+                <input type="date" name="birthdate" id="birthdate" class="form-control" required>
+              </div>
 
-              <label><b>Password</b></label>
-              <input type="password" name="password" class="form-control"placeholder="Enter Password">
+              <div class="form-group">
+                <label for="contact"><b>Contact Number:</b></label>
+                <input type="number" id="contact" name="contact" class="form-control" required placeholder="Enter Contact Number">
+              </div>
 
-              <label><b>Confirm Password:</b></label>
-              <input type="password" name="password2" class="form-control"placeholder="Confirm Password">
+              <div class="form-group">
+                <label for="email"><b>Email Address:</b>  </label>
+                <input type="email" name="email" id="email" class="form-control" required placeholder="Enter Email">
+              </div>
 
+              <div class="form-group">
+                <label for="username"><b>Username (6-15 characters)</b></label>
+                <input type="text" name="username" id="username" class="form-control" required placeholder="Enter Username">
+              </div>
+
+              <div class="form-group">
+                <label for="password"><b>Password (6-15 characters)</b>  </label>
+                <input type="password" name="password" id="password" class="form-control" required placeholder="Enter Password">
+              </div>
+
+              <div class="form-group">
+                <label for="confirmpassword"><b>Confirm Password:</b></label>
+                <input type="password" name="confirmpassword" id="confirmpassword" required class="form-control"placeholder="Confirm Password">
+              </div>
+
+              <input type="checkbox" name="terms" required > I accept the <u>Terms and Conditions</u>
               <div class="clearfix">
-                <button type="button" name="button" class="btn btn-default">Cancel</button>
-                <button type="submit" name="button" class="btn btn-default">Sign Up</button>
+                <br/>
+                <a href="<?php echo base_url('Register')?>" class="btn btn-danger">Cancel</a>
+                <button class="btn btn-primary" name="register">Confirm</button>
               </div>
           </form>
 
