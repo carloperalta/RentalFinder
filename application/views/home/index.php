@@ -58,7 +58,7 @@
 
 					<div class="fh5co-property">
 						<figure>
-							<img src="<?php echo base_url() ?>bootstrap/images/slide_3.jpg" alt="Free Website Templates FreeHTML5.co" class="img-responsive">
+							<img src="<?php echo base_url() ?>assets/images/slide_1.jpg" alt="Free Website Templates FreeHTML5.co" class="img-responsive">
 							<a href="#" class="tag">For Rent</a>
 						</figure>
 						<div class="fh5co-property-innter">
@@ -79,7 +79,7 @@
 
 					<div class="fh5co-property">
 						<figure>
-							<img src="<?php echo base_url() ?>bootstrap/images/slide_2.jpg" alt="Free Website Templates FreeHTML5.co" class="img-responsive">
+							<img src="<?php echo base_url() ?>assets/images/slide_3.jpg" alt="Free Website Templates FreeHTML5.co" class="img-responsive">
 							<a href="#" class="tag">For Rent</a>
 						</figure>
 						<div class="fh5co-property-innter">
@@ -99,7 +99,7 @@
 
 					<div class="fh5co-property">
 						<figure>
-							<img src="<?php echo base_url() ?>bootstrap/images/slide_1.jpg" alt="Free Website Templates FreeHTML5.co" class="img-responsive">
+							<img src="<?php echo base_url() ?>assets/images/slide_5.jpg" alt="Free Website Templates FreeHTML5.co" class="img-responsive">
 							<a href="#" class="tag">For Rent</a>
 						</figure>
 						<div class="fh5co-property-innter">
@@ -120,17 +120,6 @@
 		</div>
 	</div>
 
-
-	<div class="fh5co-section-with-image">
-
-		<img src="<?php echo base_url() ?>bootstrap/images/image_1.jpg" alt="" class="img-responsive">
-		<div class="fh5co-box animate-box">
-			<h2>Security, Comfort, &amp; Convenience</h2>
-			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque dicta magni amet atque doloremque velit unde adipisci omnis hic quaerat.</p>
-			<p><a href="#" class="btn btn-primary btn-outline with-arrow">Get started <i class="icon-arrow-right"></i></a></p>
-		</div>
-
-	</div>
 
 	<div id="fh5co-testimonial">
 		<div class="container">

@@ -1,0 +1,25 @@
+.loginbg {
+    height: 100%; 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+body, html {
+    height: 100%;
+    margin: 0;
+} 
+
+.caption {
+  position: absolute;
+  left: 0;
+  top: 25%;
+  width: 100%;
+  text-align: center;
+  color: #000;
+}
+
+.inline{
+	display: inline;
+}

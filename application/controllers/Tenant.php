@@ -7,6 +7,8 @@ class Tenant extends CI_Controller{
   }
 
   function master($page){
+  	$this->load->view('');
     $this->load->view($page);
+ 	$this->load->view('');
   }
 }
