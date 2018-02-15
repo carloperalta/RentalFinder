@@ -1,4 +1,5 @@
-<div class="modal-content" style="background-image: url('<?php echo base_url();?>bootstrap/images/slide_2.jpg');">
+<div class="row" style="background-image: url('<?php echo base_url();?>assets/images/new2.jpg');background-attachment:fixed">
+
 
 	<div class="row" style="margin:150px 0 0 0;">
 		<div class="col-md-4">

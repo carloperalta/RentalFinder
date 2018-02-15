@@ -64,7 +64,4 @@ ALTER TABLE ci_sessions ADD PRIMARY KEY (id);
 
 *******************ENCRYPTION KEY = '3038f363028aa03f72a1abde77481aa7'*******************************************
 
-
-
-
  
