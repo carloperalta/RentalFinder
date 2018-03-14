@@ -51,14 +51,14 @@ class User_Authentication extends CI_Controller
         }
 		
 		// Load login & profile view
-        $this->load->view('user_authentication/index',$data);
+		redirect('login');
     }
 
 	public function logout() {
 		// Remove local Facebook session
 		$this->facebook->destroy_session();
 		// Remove user data from session
-		$this->session->unset_userdata('userData');
+		$this->session->sess_destroy();
 		// Redirect to login page
         redirect('/user_authentication');
     }

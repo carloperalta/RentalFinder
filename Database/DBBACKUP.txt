@@ -1,0 +1,36 @@
+CREATE TABLE IF NOT EXISTS `user`(
+    user_id int PRIMARY KEY,
+    username varchar(20) NOT NULL,
+    password varchar(20) NOT NULL,
+    user_type varchar(6) NOT NULL,
+    gender varchar(6)
+);
+
+CREATE TABLE IF NOT EXISTS `unit`(
+    Unit_ID int PRIMARY KEY AUTO_INCREMENT,
+    Unit_Lat double,
+    Unit_Long double,
+    Unit_Price double,
+    Unit_Type varchar(15) NOT NULL,
+    Owner_ID int,
+    Unit_Description varchar(255),
+    Unit_Capacity INT
+);
+
+CREATE TABLE IF NOT EXISTS `ci_sessions` (
+        `id` varchar(128) NOT NULL,
+        `ip_address` varchar(45) NOT NULL,
+        `timestamp` int(10) unsigned DEFAULT 0 NOT NULL,
+        `data` blob NOT NULL,
+        KEY `ci_sessions_timestamp` (`timestamp`)
+);
+
+CREATE TABLE `rentalfinder`.`unit_type` ( `type_id` INT NOT NULL , `type_name` INT NOT NULL ) ENGINE = InnoDB;
+
+ALTER TABLE ci_sessions ADD PRIMARY KEY (id);
+ 
+
+
+
+
+ 

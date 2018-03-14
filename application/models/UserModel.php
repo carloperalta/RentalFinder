@@ -7,16 +7,14 @@ class UserModel extends CI_Model {
 		public $PRIMARY_KEY = 'user_id';
 		public $USER_TYPE = 'user_type';
 
-		public function getUser($username,$password)
-		{
 
-			$this->db->where('username', $username);
-			$this->db->where('password', $password);
+		public function getUser($email,$password)
+		{
+			$where = array('email' => $email, 'password' => $password);
+			$this->db->where($where);
 			$this->db->from($this->TABLE_NAME);
 			$query = $this->db->get()->row();
-			
 			return $query;
-
 		}
 
 		public function getAllUsers()
