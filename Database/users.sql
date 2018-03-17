@@ -30,15 +30,17 @@ CREATE TABLE IF NOT EXISTS `users` (
 `id` int(11) NOT NULL,
   `oauth_provider` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `oauth_uid` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `first_name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `last_name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `fullname` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `email` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `gender` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
   `locale` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
   `picture_url` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `profile_url` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `created` datetime NOT NULL,
-  `modified` datetime NOT NULL
+  `modified` datetime NOT NULL,
+  `contact` varchar(255) DEFAULT NULL,
+  `address` varchar(255) DEFAULT NULL,
+  `about` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --

@@ -16,11 +16,15 @@
           $this->form_validation->set_rules('email', 'email', 'required|trim|is_unique[user.email]');
           $this->form_validation->set_rules('password', 'password', 'required|trim');
           $this->form_validation->set_rules('gender', 'gender', 'required|trim');
-          $this->form_validation->set_rules('password', 'Password', 'required|trim|min_length[6]|max_length[15]');
           $this->form_validation->set_rules('name', 'name', 'trim|required');
+          $this->form_validation->set_rules('confirmpassword', 'confirmpassword', 'trim|required|matches[password]');
 
           $email = $this->input->post('email');
           $this->session->set_flashdata('error','<div class="alert alert-danger">'.$email.' was already taken</div>');
+          if ($this->input->post('password') != $this->input->post('confirmpassword')) {
+          $this->session->set_flashdata('error','<div class="alert alert-danger">Password not match</div>');
+            # code...
+          }
           if ($this->form_validation->run() == TRUE) {
               $user = array(
                 'email' => $email,

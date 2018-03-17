@@ -88,7 +88,7 @@
                 <h3>Log In</h3>
               </div>
 
-              <a href=" <?php echo base_url('User_authentication')?>">
+              <a href=" <?php echo $authUrl?>">
                 <img src=" <?php echo base_url('assets/images/flogin.png')?>" alt="facebooklogin" style="width:210px;height:40px;float: right;"/>
               </a>
               <hr>

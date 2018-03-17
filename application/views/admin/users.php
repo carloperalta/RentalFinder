@@ -65,7 +65,7 @@
                     </a>
                 </li>
                 <li>
-                   <a href="">
+                   <a href="<?php echo base_url('Admin/logout'); ?> ">
                        <i class="ti-settings"></i>
                        <p>Logout</p>
                    </a> 
@@ -91,34 +91,36 @@
                 </div>
             </div>
         </nav>
-        <button class="btn btn-success" data-toggle="modal" data-target="#addusermodal">Add New <i class="icon-plus icon-white"></i></button>
         <div class="block">
+                        <button class="btn btn-success" data-toggle="modal" data-target="#addusermodal">Add New <i class="icon-plus icon-white"></i></button>
+            
                 <div class="col-md-12">
-                    
-
-                <div class="container-fluid">
-                    <table class="table">
-                        <thead>
+                    <div class="row">
+                        <div class="container-fluid">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Name</th>
+                                    <th>User type</th>
+                                    <th>Properties</th>
+                                </tr>
+                            </thead>
+                            <tbody id = show_data>
                             <tr>
-                                <th>ID</th>
-                                <th>Name</th>
-                                <th>User type</th>
-                                <th>Properties</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>Caren Mae Bechayda</td>
-                            <td class="center">Admin</td>
-                            <td class="center">-</td>
-                         </tr>
-                                            
-                        </tbody>
-                    </table>
-                    
-                </div>
+                                <td>1</td>
+                                <td>Caren Mae Bechayda</td>
+                                <td class="center">Admin</td>
+                                <td class="center">-</td>
+                             </tr>
+                                                
+                            </tbody>
+                        </table>
+                        
+                    </div>
+                    </div>
 
+                    
                 </div>
         </div>
         
@@ -160,17 +162,26 @@
                     <h1>Add new user</h1>
                 </div>
                 <div class="modal-body">
+                    <div class="form-group">
                         <label for="name">Fullname</label>
-                        <input type="text" name="name" required="" class="form-in">
+                        <input type="text" name="name" required="" class="form-control">
+                    </div>
 
+                    <div class="form-group">
                         <label for="email">Email</label>
-                        <input type="email" name="email" required="">
-
+                        <input type="email" name="email" required="" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password:</label>
+                        <input type="password" name="password" required="" class="form-control">
+                    </div>
+                    <div class="form-group">
                         <label for="usertype">Usertype</label>
-                        <select name="usertype">
-                            <option>Admin</option>
-                            <option>User</option>
+                        <select name="usertype" class="form-control">
+                            <option>ADMIN</option>
+                            <option>USER</option>
                         </select>
+                    </div>
                 </div>
                 
                 <div class="modal-footer">
