@@ -65,7 +65,11 @@
                     </a>
                 </li>
                 <li>
+
+                   <a href="<?php echo base_url('User/logout'); ?> ">
+
                    <a href="<?php echo base_url('Admin/logout'); ?> ">
+
                        <i class="ti-settings"></i>
                        <p>Logout</p>
                    </a> 

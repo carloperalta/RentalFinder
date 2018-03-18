@@ -32,8 +32,15 @@ class User_Authentication extends CI_Controller
             // Insert or update user data
             $userData['id']= $this->user->checkUser($userData);
 			// Check user data insert or update status
+
+            if(!empty($userData['id'])){
+                $data['userData'] = $userData;
+                $userData['user_type'] = "USER";
+                $this->session->set_userdata($userData);
+
             if(isset($userData['id'])){
                 $data['userData'] = $userData;
+
             } else {
                $data['userData'] = array();
             }
@@ -46,6 +53,9 @@ class User_Authentication extends CI_Controller
         }
 		// Load login & profile view
 
+		$this->load->view('user_authentication/index', $data);
+
+
         if(isset($userData['fullname'])){
                 $userData['FULLNAME'] = $userData['fullname'];
                 $userData['user_type'] = "USER";
@@ -57,6 +67,7 @@ class User_Authentication extends CI_Controller
                 $this->session->set_userdata($userData);
                 redirect('');
         }
+
     }
 
 	public function logout() {

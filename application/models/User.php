@@ -5,6 +5,8 @@ class User extends CI_Model{
 		$this->primaryKey = 'id';
 	}
 
+
+
 	public function getUserById($id)
 	{
 		$this->db->where($this->primaryKey, $id);
@@ -12,6 +14,7 @@ class User extends CI_Model{
 		$query = $this->db->get();
 		return $query->row();
 	}
+
 
 	
 	public function checkUser($data = array()){

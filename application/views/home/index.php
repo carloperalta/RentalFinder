@@ -50,13 +50,20 @@
                     <h1><a href="<?php echo base_url() ?>">Rental Finder<span>.</span></a></h1>             
                     <nav role="navigation" class="nav navbar-nav navbar-right">
                      <ul >
+
+                        <li><a href="<?php echo base_url('Posts');?>">Rent</a></li>
+
                         <?php if (!isset($FULLNAME)) {?>
                         <li><a href="">Rent</a></li>
+
                         <li><a href="">Promo</a></li>
                         <li><a href="">Contact Us</a></li>
                         <li class="cta">
                           <a href="<?php echo base_url('Login'); ?>">Login</a>
                         </li>
+
+                        <li class="cta"><a href="<?php echo base_url('Register'); ?>">Signup</a></li>
+
                         <li class="cta"><a href="<?php echo base_url('Register') ?>">Signup</a></li>
                         <?php }else{ ?>
                         <?php echo "<li class=\"active\"><a href=\"\">".$FULLNAME."</a></li>"; ?>
@@ -64,6 +71,7 @@
                         <li><a href="">Promo</a></li>
                         <li class="cta"> <a href="<?php echo base_url($user_type) ?>" title="">Property Management</a></li>
                         <?php } ?>
+
                      </ul>
                     </nav>
                 </div>

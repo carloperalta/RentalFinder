@@ -59,6 +59,10 @@ class Login extends CI_Controller{
       // Check user data insert or update status
             if(!empty($userData['id'])){
                 $data['userData'] = $userData;
+
+                $userData['user_type'] = "USER";
+                $this->session->set_userdata($userData);
+
             } else {
                $data['userData'] = array();
             }
@@ -71,6 +75,8 @@ class Login extends CI_Controller{
       // Get login URL
             $data['authUrl'] =  $this->facebook->login_url();
         }
+
+
 
 
       $this->load->view('Home/login',$data);
