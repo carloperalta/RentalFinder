@@ -49,7 +49,7 @@
 
                     <nav role="navigation" class="nav navbar-nav navbar-right">
                      <ul >
-                        <li><a href="">Rent</a></li>
+                        <li><a href="<?php echo base_url('Posts');?>">Rent</a></li>
                         <li><a href="">Promo</a></li>
                         <li><a href="">Contact Us</a></li>
                         <li class="cta">
@@ -87,10 +87,16 @@
               <div class="form-title-row">
                 <h3>Log In</h3>
               </div>
-
-              <a href=" <?php echo base_url('User_authentication')?>">
-                <img src=" <?php echo base_url('assets/images/flogin.png')?>" alt="facebooklogin" style="width:210px;height:40px;float: right;"/>
-              </a>
+              <?php
+                  if(!empty($authUrl)) {
+                   echo '<a href="'.$authUrl.'"><img src="'.base_url().'assets/images/flogin.png" alt="" style="width:210px;height:41px;"/></a>';
+                    } else{
+                    ?>
+              <div style="padding-left:6px" class="wrapper">
+              <p><b>Want to logout? <a href="<?php echo $logoutUrl; ?>">Logout</a></b></p>
+              </div>
+              </div>
+              <?php } ?> 
               <hr>
               <?php
                 if ( $this->session->flashdata('error')) {
@@ -166,7 +172,7 @@
 
 
   <!-- jQuery -->
-  <script type="text/javascript"\ href="<?php echo base_url('assets/js/jquery.min.js');?>"></script>
+  <script type="text/javascript" href="<?php echo base_url('assets/js/jquery.min.js');?>"></script>
   <!-- jQuery Easing -->
   <script type="text/javascript" href="<?php echo base_url('assets/js/jquery.easing.1.3.js');?>"></script>
   <!-- Bootstrap -->

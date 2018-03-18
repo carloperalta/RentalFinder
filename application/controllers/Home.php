@@ -8,7 +8,6 @@ class Home extends CI_Controller{
 
   public function Rent()
   {
-  	$this->load->view('admin/users');
   }
   public function contact_us()
   {
