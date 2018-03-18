@@ -4,7 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class UserModel extends CI_Model {
 
 		public $TABLE_NAME = 'user';
-		public $PRIMARY_KEY = 'user_id';
+		public $PRIMARY_KEY = 'id';
 		public $USER_TYPE = 'user_type';
 
 
@@ -46,6 +46,13 @@ class UserModel extends CI_Model {
 			$this->db->where($this->PRIMARY_KEY, $id);
 			$this->db->delete($this->TABLE_NAME);
 			return TRUE;
+		}
+
+		public function getUserById($id)
+		{
+			$this->db->where($this->PRIMARY_KEY, $id);
+			$this->db->from($this->TABLE_NAME);
+			return $this->db->get()->result();
 		}
 }
 

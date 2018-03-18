@@ -87,6 +87,7 @@
               <div class="form-title-row">
                 <h3>Log In</h3>
               </div>
+
               <?php
                   if(!empty($authUrl)) {
                    echo '<a href="'.$authUrl.'"><img src="'.base_url().'assets/images/flogin.png" alt="" style="width:210px;height:41px;"/></a>';
@@ -97,6 +98,12 @@
               </div>
               </div>
               <?php } ?> 
+
+
+              <a href=" <?php echo $authUrl?>">
+                <img src=" <?php echo base_url('assets/images/flogin.png')?>" alt="facebooklogin" style="width:210px;height:40px;float: right;"/>
+              </a>
+
               <hr>
               <?php
                 if ( $this->session->flashdata('error')) {

@@ -1,10 +1,13 @@
 <?php
 
-class User extends CI_Controller{
+class User
+ extends CI_Controller{
   private $data;
   public function __construct()
   {
     parent::__construct();
+    $this->load->model('UserModel','Normies');
+
     if ($this->session->userdata('user_type') != 'USER') {
       redirect('');
     }
@@ -17,7 +20,12 @@ class User extends CI_Controller{
 
   public function editprofile()
   {
-    $this->load->view('User/settings',$this->data);
+    if (isset($this->data->logoutUrl)) {
+      $usersInfo = $this->Facebooklords->getUserById($this->data->id);
+    }else{
+      $usersInfo = $this->data;
+    }
+    $this->load->view('User/settings',$usersInfo);
   }
 
   public function profile()

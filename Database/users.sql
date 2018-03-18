@@ -37,7 +37,10 @@ CREATE TABLE IF NOT EXISTS `users` (
   `picture_url` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `profile_url` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `created` datetime NOT NULL,
-  `modified` datetime NOT NULL
+  `modified` datetime NOT NULL,
+  `contact` varchar(255) DEFAULT NULL,
+  `address` varchar(255) DEFAULT NULL,
+  `about` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --

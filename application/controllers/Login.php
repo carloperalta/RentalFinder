@@ -22,15 +22,19 @@ class Login extends CI_Controller{
               $user = array(
                 'id' => $result->id,
                 'email'=> $result->email,
-                'password'=> $result->password,
+                'password' => $result->password,
                 'user_type' => $result->user_type,
+                'gender' => $result->gender,
+                'address'=>$result->address,
+                'about' => $result->about,
+                'contact'=>$result->contact,
                 'FULLNAME' => $result->name
               );
             $this->session->set_userdata($user);
             if($user['user_type'] == "ADMIN"){
               redirect('Admin');
             }else if($user['user_type'] == "USER"){
-              redirect('User');
+              redirect('');
             }
      }else{
           $this->session->set_flashdata('error','<div class="alert alert-danger">Email or Password is Incorrect.</div>');
@@ -55,8 +59,10 @@ class Login extends CI_Controller{
       // Check user data insert or update status
             if(!empty($userData['id'])){
                 $data['userData'] = $userData;
+
                 $userData['user_type'] = "USER";
                 $this->session->set_userdata($userData);
+
             } else {
                $data['userData'] = array();
             }
@@ -69,6 +75,9 @@ class Login extends CI_Controller{
       // Get login URL
             $data['authUrl'] =  $this->facebook->login_url();
         }
+
+
+
 
       $this->load->view('Home/login',$data);
 }
