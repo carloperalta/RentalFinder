@@ -50,7 +50,7 @@
 
                     <nav role="navigation" class="nav navbar-nav navbar-right">
                      <ul >
-                        <li><a href="<?php echo base_url('Posts');?>">Rent</a></li>
+                        <li><a href="">Rent</a></li>
                         <li><a href="">Promo</a></li>
                         <li><a href="">Contact Us</a></li>
                         <li class="cta">
