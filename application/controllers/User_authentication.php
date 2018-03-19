@@ -57,6 +57,10 @@ class User_Authentication extends CI_Controller
                 $this->session->set_userdata($userData);
                 redirect('');
         }
+        $this->session->set_flashdata('error', '<div class="alert alert-danger">
+            Unexpected error has occured
+        </div>');
+        redirect('Login');
     }
 
 	public function logout() {

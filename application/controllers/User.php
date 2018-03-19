@@ -6,16 +6,15 @@ class User
   public function __construct()
   {
     parent::__construct();
-    $this->load->model('UserModel','Normies');
-
     if ($this->session->userdata('user_type') != 'USER') {
       redirect('');
     }
+    $this->load->model('UserModel','Normies');
     $this->data =  $this->session->userdata();
   }
 
   function index(){
-    $this->load->view('User/dashboard',$this->data);
+    $this->master('User/dashboard',$this->data);
   }
 
   public function editprofile()
@@ -25,37 +24,37 @@ class User
     }else{
       $usersInfo = $this->data;
     }
-    $this->load->view('User/settings',$usersInfo);
+    $this->master('User/settings',$usersInfo);
   }
 
   public function profile()
   {
-  	$this->load->view('User/profile',$this->data);
+  	$this->master('User/profile',$this->data);
   }
 
   public function tenant_list()
   {
-  	$this->load->view('User/tenants',$this->data);
+  	$this->master('User/tenants',$this->data);
   }
 
   public function property()
   {
-  	$this->load->view('User/property',$this->data);
+  	$this->master('User/property',$this->data);
   }
 
   public function inbox()
   {
-  	$this->load->view('User/inbox',$this->data);
+  	$this->master('User/inbox',$this->data);
   }
 
   public function maps()
   {
-  	$this->load->view('User/maps',$this->data);
+  	$this->master('User/maps',$this->data);
   }
 
   public function notifications()
   {
-  	$this->load->view('User/notifications',$this->data);
+  	$this->master('User/notifications',$this->data);
   }
 
   public function logout()
@@ -63,4 +62,12 @@ class User
       $this->session->sess_destroy();
       redirect('');
   }
+
+public function master($page,$data = null)
+  {
+    $this->load->view('User/header', $data);
+    $this->load->view($page, $data);
+    $this->load->view('User/footer', $data);
+  }
+
 }

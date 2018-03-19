@@ -1,0 +1,89 @@
+  <?php $bgimage = base_url('assets/images/new2.jpg'); ?>
+ 
+ <div style="background-image: url('<?php echo $bgimage?>');background-attachment:fixed;height:100%; max-width: 100%; overflow-x: hidden;">
+<div class="row" >
+  <div class="container" >
+    <div class="row">
+      <div class="col-md-12" style="margin:100px 0 0 0">
+        
+        <div class="well">
+          <div class="container-fluid">
+            <div class=" col-md-6 align-content-center">
+              <img src="<?php echo base_url('rental_logo.png'); ?>" alt="Logo">
+            </div> 
+          <div class="col-md-6">
+            <div class="well">
+              <div class="container-fluid">
+
+              <form action="<?php base_url('Register/validate'); ?>" method="post">
+
+              <div class="form-title-row">
+                <h3>Sign up</h3>
+              </div>
+              <hr>
+              <?php
+                if ( $this->session->flashdata('error')) {
+                  echo $this->session->flashdata('error');
+                }
+                ?>
+              <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" name="email" class="form-control" id="email" required >
+               </div> 
+
+               <div class="form-group">
+                <label for="name">Full Name:</label>
+                <input type="text" name="name" class="form-control" id="name" required >
+               </div> 
+
+               <div class="form-group">
+                <label for="gender">Gender:</label>
+                <select name="gender" class="form-control" id="gender" required>
+                  <option value="male">Male</option>
+                  <option value="female">Female</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="password"> Password: </label>
+                <input type="password" name="password" class="form-control" id="password" required> 
+              </div>
+
+              <div class="form-group">
+                <label for="confirmpassword">Confirm Password:</label>
+                <input type="password" name="confirmpassword" class="form-control" id="confirmpassword" required>
+              </div>
+              <input type="checkbox" name="terms" required > 
+                I accept the 
+              <a href=""  data-toggle="modal" data-target="#termsandconditions">Terms and Conditions</a>
+              <div class="clearfix">
+                <br/>
+                <input type="submit" name="register" class="btn btn-primary" style="float: right;" value="Confirm">
+              </div>
+              </form>
+              </div>
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="termsandconditions" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title" id="exampleModalLongTitle">Terms and Conditions</h1>
+      </div>
+      <div class="modal-body">
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger"  data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>

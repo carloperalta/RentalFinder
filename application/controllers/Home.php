@@ -4,7 +4,7 @@ class Home extends CI_Controller{
   private $data;
   function index(){
     $this->data = $this->session->userdata();
-  	$this->load->view('home/index',$this->data);
+  	$this->master('home/index',$this->data);
   }
 
   public function Rent()
@@ -13,5 +13,12 @@ class Home extends CI_Controller{
   public function contact_us()
   {
   	# code...
+  }
+
+  public function master($page,$data = null)
+  {
+    $this->load->view('Home/header', $data);
+    $this->load->view($page, $data);
+    $this->load->view('Home/footer', $data);
   }
 }

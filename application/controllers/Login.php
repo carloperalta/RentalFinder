@@ -5,9 +5,19 @@ class Login extends CI_Controller{
   public function __construct()
   {
     parent::__construct();
+    if ($this->session->userdata('user_type') != null) {
+      redirect('');
+    }
     $this->load->model('UserModel');
     $this->load->model('user');
     $this->load->library('facebook');
+  }
+
+  public function master($page,$data = null)
+  {
+    $this->load->view('Home/header', $data);
+    $this->load->view($page, $data);
+    $this->load->view('Home/footer', $data);
   }
 
   function index(){
@@ -40,10 +50,11 @@ class Login extends CI_Controller{
           $this->session->set_flashdata('error','<div class="alert alert-danger">Email or Password is Incorrect.</div>');
       }
     }$userData = array();
+
     // Check if user is logged in
     if($this->facebook->is_authenticated()){
-      // Get user facebook profile details
       $userProfile = $this->facebook->request('get', '/me?fields=id,first_name,last_name,email,gender,locale,picture');
+      // Get user facebook profile details
             // Preparing data for database insertion
             $userData['oauth_provider'] = 'facebook';
             $userData['oauth_uid'] = $userProfile['id'];
@@ -71,9 +82,7 @@ class Login extends CI_Controller{
       // Get login URL
             $data['authUrl'] =  $this->facebook->login_url();
         }
-
-
-      $this->load->view('Home/login',$data);
+      $this->master('Home/login',$data);
 }
 
 }

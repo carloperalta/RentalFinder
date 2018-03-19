@@ -7,9 +7,19 @@
     public function __construct()
     {
       parent::__construct();
-      
+      if ( $this->session->userdata('user_type') != null) {
+        redirect('');
+      }
+
       $this->load->model('UserModel');
 
+    }
+
+    public function master($page,$data = null)
+    {
+      $this->load->view('Home/header', $data);
+      $this->load->view($page, $data);
+      $this->load->view('Home/footer', $data);
     }
     function index(){
       if (isset($_POST['register'])) {
@@ -39,6 +49,6 @@
               redirect('Login');
           }
       }
-    $this->load->view('/signup/signup');
+    $this->master('/Home/signup');
   }
 }
