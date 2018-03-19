@@ -8,28 +8,34 @@ class Posts extends CI_Controller {
         parent::__construct();
         $this->load->model('post');
         $this->load->library('Ajax_pagination');
-        $this->perPage = 2;
+        $this->perPage = 3;
     }
     
-    public function index(){
-        $data = array();
-        
-        //total rows count
-        $totalRec = count($this->post->getRows());
-        
-        //pagination configuration
-        $config['target']      = '#postList';
-        $config['base_url']    = base_url().'posts/ajaxPaginationData';
-        $config['total_rows']  = $totalRec;
-        $config['per_page']    = $this->perPage;
-        $config['link_func']   = 'searchFilter';
-        $this->ajax_pagination->initialize($config);
-        
-        //get the posts data
-        $data['posts'] = $this->post->getRows(array('limit'=>$this->perPage));
-        
-        //load the view
-        $this->load->view('posts/index', $data);
+    public function index($title=false){
+        if($title==false){
+                            $data = array();
+                            
+                            //total rows count
+                            $totalRec = count($this->post->getRows());
+                            
+                            //pagination configuration
+                            $config['target']      = '#postList';
+                            $config['base_url']    = base_url().'posts/ajaxPaginationData';
+                            $config['total_rows']  = $totalRec;
+                            $config['per_page']    = $this->perPage;
+                            $config['link_func']   = 'searchFilter';
+                            $this->ajax_pagination->initialize($config);
+                            
+                            //get the posts data
+                            $data['posts'] = $this->post->getRows(array('limit'=>$this->perPage));
+                            
+                            //load the view
+                            $this->load->view('posts/index', $data);
+        }
+        else{
+            $data=$this->post->getPost($title);
+            print_r($data);
+        }
     }
     
     function ajaxPaginationData(){

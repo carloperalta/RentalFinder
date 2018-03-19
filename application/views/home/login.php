@@ -1,9 +1,32 @@
-  <?php $bgimage = base_url('assets/images/new2.jpg'); ?>
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Rental Finder</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="This is a collaboration project of BSCS-3A and BSCS-3B" />
+  <meta name="keywords" content="rental, rent, rental finder" />
+  <meta name="author" content="Group 7" />
+
+  <meta property="og:title" content=""/>
+  <meta property="og:image" content=""/>
+  <meta property="og:url" content=""/>
+  <meta property="og:site_name" content=""/>
+  <meta property="og:description" content=""/>
+  <meta name="twitter:title" content="" />
+  <meta name="twitter:image" content="" />
+  <meta name="twitter:url" content="" />
+  <meta name="twitter:card" content="" />
+
+
+  <link rel="shortcut icon" href="favicon.ico">
+  <link href='https://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
+   
+  <link rel="stylesheet" href="<?php echo base_url();?>assets/css/animate.css">
+   
+  <link rel="stylesheet" href="<?php echo base_url();?>assets/css/icomoon.css">
  
-<<<<<<< HEAD
- <div style="background-image: url('<?php echo $bgimage?>');background-attachment:fixed;height:100%; max-width: 100%; overflow-x: hidden;">
-   <div class="row">
-=======
   <link rel="stylesheet" href="<?php echo base_url();?>assets/css/bootstrap.css">
    
   <link rel="stylesheet" href="<?php echo base_url();?>assets/css/flexslider.css">
@@ -48,7 +71,6 @@
     
 <div class="row" >
 
->>>>>>> 5e02c54c34447d590b43fc4937be71ba58a2f2c7
   <div class="container" >
     <div class="row">
       <div class="col-md-12" style="margin:100px 0 0 0">
@@ -65,7 +87,6 @@
               <div class="form-title-row">
                 <h3>Log In</h3>
               </div>
-
               <?php
                   if(!empty($authUrl)) {
                    echo '<a href="'.$authUrl.'"><img src="'.base_url().'assets/images/flogin.png" alt="" style="width:210px;height:41px;"/></a>';
@@ -76,12 +97,6 @@
               </div>
               </div>
               <?php } ?> 
-
-
-              <a href=" <?php echo $authUrl?>">
-                <img src=" <?php echo base_url('assets/images/flogin.png')?>" alt="facebooklogin" style="width:210px;height:40px;float: right;"/>
-              </a>
-
               <hr>
               <?php
                 if ( $this->session->flashdata('error')) {
@@ -109,14 +124,13 @@
           </div>
           </div>
         </div>
+          
+
       </div>
+
     </div>
   </div>
 </div>
-<<<<<<< HEAD
- 
- </div>
-=======
 
 </body>
 <footer id="fh5co-footer" role="contentinfo" style="display: block;">
@@ -173,4 +187,3 @@
 
   </body>
 </html>
->>>>>>> 5e02c54c34447d590b43fc4937be71ba58a2f2c7

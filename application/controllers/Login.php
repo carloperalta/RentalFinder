@@ -5,19 +5,9 @@ class Login extends CI_Controller{
   public function __construct()
   {
     parent::__construct();
-    if ($this->session->userdata('user_type') != null) {
-      redirect('');
-    }
     $this->load->model('UserModel');
     $this->load->model('user');
     $this->load->library('facebook');
-  }
-
-  public function master($page,$data = null)
-  {
-    $this->load->view('Home/header', $data);
-    $this->load->view($page, $data);
-    $this->load->view('Home/footer', $data);
   }
 
   function index(){
@@ -32,29 +22,24 @@ class Login extends CI_Controller{
               $user = array(
                 'id' => $result->id,
                 'email'=> $result->email,
-                'password' => $result->password,
+                'password'=> $result->password,
                 'user_type' => $result->user_type,
-                'gender' => $result->gender,
-                'address'=>$result->address,
-                'about' => $result->about,
-                'contact'=>$result->contact,
                 'FULLNAME' => $result->name
               );
             $this->session->set_userdata($user);
             if($user['user_type'] == "ADMIN"){
               redirect('Admin');
             }else if($user['user_type'] == "USER"){
-              redirect('');
+              redirect('User');
             }
      }else{
           $this->session->set_flashdata('error','<div class="alert alert-danger">Email or Password is Incorrect.</div>');
       }
     }$userData = array();
-
     // Check if user is logged in
     if($this->facebook->is_authenticated()){
-      $userProfile = $this->facebook->request('get', '/me?fields=id,first_name,last_name,email,gender,locale,picture');
       // Get user facebook profile details
+      $userProfile = $this->facebook->request('get', '/me?fields=id,first_name,last_name,email,gender,locale,picture');
             // Preparing data for database insertion
             $userData['oauth_provider'] = 'facebook';
             $userData['oauth_uid'] = $userProfile['id'];
@@ -70,10 +55,8 @@ class Login extends CI_Controller{
       // Check user data insert or update status
             if(!empty($userData['id'])){
                 $data['userData'] = $userData;
-
                 $userData['user_type'] = "USER";
                 $this->session->set_userdata($userData);
-
             } else {
                $data['userData'] = array();
             }
@@ -86,15 +69,8 @@ class Login extends CI_Controller{
       // Get login URL
             $data['authUrl'] =  $this->facebook->login_url();
         }
-<<<<<<< HEAD
-      $this->master('Home/login',$data);
-=======
-
-
-
 
       $this->load->view('Home/login',$data);
->>>>>>> 5e02c54c34447d590b43fc4937be71ba58a2f2c7
 }
 
 }
