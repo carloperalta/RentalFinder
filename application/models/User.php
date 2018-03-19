@@ -4,6 +4,8 @@ class User extends CI_Model{
 		$this->tableName = 'users';
 		$this->primaryKey = 'id';
 	}
+
+	
 	public function checkUser($data = array()){
 		$this->db->select($this->primaryKey);
 		$this->db->from($this->tableName);
