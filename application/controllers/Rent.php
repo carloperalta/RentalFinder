@@ -2,7 +2,7 @@
 /**
  * Posts Management class created by CodexWorld
  */
-class Posts extends CI_Controller {
+class Rent extends CI_Controller {
     
     function __construct() {
         parent::__construct();
@@ -11,25 +11,32 @@ class Posts extends CI_Controller {
         $this->perPage = 2;
     }
     
-    public function index(){
-        $data = array();
-        
-        //total rows count
-        $totalRec = count($this->post->getRows());
-        
-        //pagination configuration
-        $config['target']      = '#postList';
-        $config['base_url']    = base_url().'posts/ajaxPaginationData';
-        $config['total_rows']  = $totalRec;
-        $config['per_page']    = $this->perPage;
-        $config['link_func']   = 'searchFilter';
-        $this->ajax_pagination->initialize($config);
-        
-        //get the posts data
-        $data['posts'] = $this->post->getRows(array('limit'=>$this->perPage));
-        
-        //load the view
-        $this->load->view('posts/index', $data);
+    public function index($Unit_Name=false){
+        if($Unit_Name){
+
+            $data['unit']=$this->post->getdata($Unit_Name);
+            $this->load->view('rent/content', $data);
+        }else{
+            $data = array();
+            
+            //total rows count
+            $totalRec = count($this->post->getRows());
+            
+            //pagination configuration
+            $config['target']      = '#postList';
+            $config['base_url']    = base_url().'rent/ajaxPaginationData';
+            $config['total_rows']  = $totalRec;
+            $config['per_page']    = $this->perPage;
+            $config['link_func']   = 'searchFilter';
+            $this->ajax_pagination->initialize($config);
+            
+            //get the posts data
+            $data['unit'] = $this->post->getRows(array('limit'=>$this->perPage));
+            
+            //load the view
+         
+            $this->load->view('rent/index', $data);
+        }
     }
     
     function ajaxPaginationData(){
@@ -58,7 +65,7 @@ class Posts extends CI_Controller {
         
         //pagination configuration
         $config['target']      = '#postList';
-        $config['base_url']    = base_url().'posts/ajaxPaginationData';
+        $config['base_url']    = base_url().'rent/ajaxPaginationData';
         $config['total_rows']  = $totalRec;
         $config['per_page']    = $this->perPage;
         $config['link_func']   = 'searchFilter';
@@ -69,9 +76,9 @@ class Posts extends CI_Controller {
         $conditions['limit'] = $this->perPage;
         
         //get posts data
-        $data['posts'] = $this->post->getRows($conditions);
+        $data['unit'] = $this->post->getRows($conditions);
         
         //load the view
-        $this->load->view('posts/ajax-pagination-data', $data, false);
+        $this->load->view('rent/ajax-pagination-data', $data, false);
     }
 }
