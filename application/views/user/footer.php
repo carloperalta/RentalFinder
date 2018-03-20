@@ -29,16 +29,35 @@
 
 
 <div class="modal fade" id="addPropertyModal" role="dialog">
-        <div class="modal-dialog modal-lg">
-          <div class="modal-content">
-            <form method="post" action="#">
+        <div class="modal-dialog modal-lg" role="document">
+          <div class="modal-content" >
+            <form method="post" action="">
                 <div class="modal-header">
                     <h1>Add Property</h1>
                 </div>
                 <div class="modal-body">
                     <div class="form-group">
                         <label for="name">Property Name</label>
-                        <input type="text" name="propertyname" required="" class="form-control">
+                        <input type="text" name="propertyname" required="" class="form-control border-input">
+                    </div>
+                    <div class="form-group">
+                        <label for="gender">Property Type</label>
+                        <select name="gender" class="form-control border-input" id="gender">
+                        
+                        <?php foreach ($types as $type => $name){
+                    echo "<option value=". $name->type_name .">". $name->type_name ."</option>";
+                         } ?>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <div class="row">
+                                <div class="well">
+                                    <!-- ADD MAP HERE!!!!-->
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="modal-footer">

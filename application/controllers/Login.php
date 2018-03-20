@@ -69,8 +69,6 @@ class Login extends CI_Controller{
       // Get login URL
             $data['authUrl'] =  $this->facebook->login_url();
         }
-
-      $this->load->view('Home/login',$data);
-}
+      $this->master('Home/login',$data);
 
 }

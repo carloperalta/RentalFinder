@@ -69,7 +69,6 @@
                 </div>
             </div>
         </div>
-
     </header>
   <?php $bgimage = base_url('assets/images/new2.jpg'); ?>
   <body style="background-image: url('<?php echo $bgimage?>');background-attachment:fixed;height:130%; max-width: 100%; overflow-x: hidden;">

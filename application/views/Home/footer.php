@@ -1,5 +1,5 @@
 
-</body>
+
 <footer id="fh5co-footer" role="contentinfo" style="display: block;">
 
   <div class="container"  style="color:#ffffff;"">
@@ -15,8 +15,6 @@
         <li><a href="#">Apartment</a></li>
         <li><a href="#">Villa</a></li>
       </ul>
-
-
     </div>
 
     <div class="col-md-2 col-md-push-1 col-sm-12 col-sm-push-0 col-xs-12 col-xs-push-0">
@@ -30,13 +28,31 @@
     </div>
 
       <div class="col-md-12 fh5co-copyright text-center">
-        <p>&copy; 2018 web:rental finder. All Rights Reserved. <span">Designed with <i class="icon-heart"></i> by <a href="http://rentalfinder.co/" target="_blank">rentalfinder.com</a> Demo Images by <a href="" target="_blank">Group7</a></span></p>
+        <p>&copy; 2018 web:rental finder. All Rights Reserved. <span>Designed with <i class="icon-heart"></i> by <a href="http://rentalfinder.co/" target="_blank">rentalfinder.com</a> Demo Images by <a href="" target="_blank">Group7</a></span></p>
       </div>
 
     </div>
   </footer>
-  </div>
+</div>
 
+<div class="modal fade" id="termsandconditions" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title" id="exampleModalLongTitle">Terms and Conditions</h1>
+      </div>
+      <div class="modal-body">
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger"  data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+</body>
 
   <!-- jQuery -->
   <script type="text/javascript"\ href="<?php echo base_url('assets/js/jquery.min.js');?>"></script>

@@ -9,6 +9,7 @@ class User
     if ($this->session->userdata('user_type') != 'USER') {
       redirect('');
     }
+    $this->load->model('UnitTypeModel','PropertyType');
     $this->load->model('UserModel','Normies');
     $this->data =  $this->session->userdata();
   }
@@ -39,6 +40,8 @@ class User
 
   public function property()
   {
+    $data['types'] = $this->PropertyType->getAllUnitType();
+    $this->session->set_userdata($data);
   	$this->master('User/property',$this->data);
   }
 

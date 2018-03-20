@@ -104,7 +104,7 @@ function searchFilter(page_num) {
             <?php endforeach; else: ?>
             <p>Post(s) not available.</p>
             <?php endif; ?>
-            <?php echo $this->ajax_pagination->create_links(); ?>
+<!--            <?php echo $this->ajax_pagination->create_links(); ?>-->
         </div>
         <div class="loading" style="display: none;"><div class="content"><img src="<?php echo base_url().'assets/images/loader.gif'; ?>"/></div></div>
     </div>

@@ -33,7 +33,6 @@ class User_Authentication extends CI_Controller
             if(!empty($userData['id'])){
                 $data['userData'] = $userData;
                 $userData['user_type'] = "USER";
-                $this->session->set_userdata($userData);
             } else {
                $data['userData'] = array();
             }
@@ -47,7 +46,21 @@ class User_Authentication extends CI_Controller
             $data['authUrl'] =  $this->facebook->login_url();
         }
 		// Load login & profile view
-		$this->load->view('user_authentication/index', $data);
+        if(isset($userData['fullname'])){
+                $userData['FULLNAME'] = $userData['fullname'];
+                $userData['user_type'] = "USER";
+                $userData['contact'] = $result->contact;
+                $userData['about'] = $result->about;
+                $userData['address'] = $result->address;
+                $result = $this->user->getUserById($userData['id']);
+
+                $this->session->set_userdata($userData);
+                redirect('');
+        }
+        $this->session->set_flashdata('error', '<div class="alert alert-danger">
+            Unexpected error has occured
+        </div>');
+        redirect('Login');
     }
 
 	public function logout() {

@@ -53,10 +53,9 @@ class McryptPseudoRandomStringGenerator implements PseudoRandomStringGeneratorIn
     public function getPseudoRandomString($length)
     {
         $this->validateLength($length);
+        //$binaryString = mcrypt_create_iv($length, MCRYPT_DEV_URANDOM);
 
-      $binaryString = mcrypt_create_iv($length, MCRYPT_DEV_URANDOM);
-
- //       $binaryString = random_bytes($length);
+        $binaryString = random_bytes($length);
         if ($binaryString === false) {
             throw new FacebookSDKException(
                 static::ERROR_MESSAGE .

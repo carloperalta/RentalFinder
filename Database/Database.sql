@@ -14,6 +14,7 @@ CREATE TABLE IF NOT EXISTS `user`(
 
 CREATE TABLE IF NOT EXISTS `unit`(
     Unit_ID int PRIMARY KEY AUTO_INCREMENT,
+	Unit_Name varchar(255),
     Unit_Lat double,
     Unit_Long double,
     Unit_Price double,
@@ -29,7 +30,7 @@ CREATE TABLE IF NOT EXISTS `ci_sessions` (
         KEY `ci_sessions_timestamp` (`timestamp`)
 );
 
-CREATE TABLE `rentalfinder`.`unit_type` ( `type_id` INT NOT NULL , `type_name` INT NOT NULL ) ENGINE = InnoDB;
+CREATE TABLE `rentalfinder`.`unit_type` ( `type_id` INT PRIMARY AUTO_INCREMENT , `type_name` VARCHAR(255) ) ENGINE = InnoDB;
  
 ALTER TABLE `unit` ADD `Unit_Description` VARCHAR(255) NOT NULL AFTER `Unit_Type`;
 

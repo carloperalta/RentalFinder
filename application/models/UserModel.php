@@ -54,6 +54,20 @@ class UserModel extends CI_Model {
 			$this->db->from($this->TABLE_NAME);
 			return $this->db->get()->result();
 		}
+
+		public function getUserAndProperties()
+		{
+			$query = "SELECT user.id,user.name,user.email,user.user_type, IFNULL(Subtotal.total,0) AS Number
+				FROM user
+				LEFT JOIN
+				(SELECT Owner_ID, Count(unit_id) AS Total
+				From unit
+				Group By Owner_ID)Subtotal
+				ON user.id = Subtotal.Owner_ID";
+
+			$SQL = $this->db->query($query);
+			return $SQL->result();
+		}
 }
 
 /* End of file UserModel.php */

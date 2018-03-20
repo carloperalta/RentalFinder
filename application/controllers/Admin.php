@@ -11,6 +11,7 @@ class Admin extends CI_Controller {
       		redirect('');
     	}
     	$this->load->model('UserModel','Users');
+    	$this->load->model('UnitTypeModel','Unit_types');
     	$this->data =  $this->session->userdata();
 	}
 
@@ -23,12 +24,13 @@ class Admin extends CI_Controller {
 
 	public function index()
 	{
-		$data['users'] = $this->Users->getAllUsers();
-  		$this->master('admin/users',$data);
+		$this->data['users'] = $this->Users->getUserAndProperties();
+  		$this->master('admin/users',$this->data);
 	}
 	public function property()
 	{
-		$this->master('admin/property');
+		$this->data['unit_types'] = $this->Unit_types->getUnitTypeAndNumber();
+		$this->master('admin/property',$this->data);
 	}
 
 	public function logout()
