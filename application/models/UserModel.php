@@ -54,6 +54,12 @@ class UserModel extends CI_Model {
 			$this->db->from($this->TABLE_NAME);
 			return $this->db->get()->result();
 		}
+		public function getCount()
+		{
+			$this->db->select('*');
+			$this->db->from($this->TABLE_NAME);
+			return $this->db->get()->num_rows();
+		}
 
 		public function getUserAndProperties()
 		{

@@ -25,6 +25,13 @@ class UnitTypeModel extends CI_Model {
 			$SQL = $this->db->query($query);
 			return $SQL->result();
 	}
+
+	public function getCount()
+	{
+		$this->db->select('*');
+		$this->db->from($this->TABLE_NAME);
+		return $this->db->get()->num_rows();
+	}
 	
 
 }

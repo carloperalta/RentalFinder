@@ -15,11 +15,15 @@ class Admin extends CI_Controller {
     	$this->data =  $this->session->userdata();
 	}
 
-	public function master($page,$data = null)
+	private function master($page,$data = null)
 	{
 		$this->load->view('admin/header', $data);
 		$this->load->view($page, $data);
 		$this->load->view('admin/footer', $data);
+	}
+	public function invoice()
+	{
+		$this->master('admin/invoice',$this->data);
 	}
 
 	public function index()

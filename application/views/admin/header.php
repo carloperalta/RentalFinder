@@ -67,6 +67,12 @@
                     </a>
                 </li>
                 <li>
+                    <a href="<?php echo base_url('Admin/Invoice'); ?>">
+                        <i class="ti-panel"></i>
+                        <p>Send Invoice</p>
+                    </a>
+                </li>
+                <li>
                    <a href="<?php echo base_url('Admin/logout'); ?> ">
                        <i class="ti-settings"></i>
                        <p>Logout</p>
@@ -79,7 +85,7 @@
     <div class="main-panel">
 		<nav class="navbar navbar-default">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#">User List</a>
+                <a class="navbar-brand" href="">Admin Panel</a>
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav navbar-right">
 						<li>

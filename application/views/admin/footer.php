@@ -39,7 +39,7 @@
                 <div class="modal-body">
                     <div class="form-group">
                         <label for="propertytype">Property Type</label>
-                        <input type="text" name="propertytype" required="" class="form-control">
+                        <input type="text" name="propertytype" required="" class="form-control border-input">
                     </div>
                 </div>
                 
