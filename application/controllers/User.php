@@ -1,7 +1,6 @@
 <?php
 
-class User
- extends CI_Controller{
+class User extends CI_Controller{
   private $data;
   public function __construct()
   {
@@ -10,6 +9,7 @@ class User
       redirect('');
     }
     $this->load->model('UnitTypeModel','PropertyType');
+    $this->load->model('UnitModel','UNITS');
     $this->load->model('UserModel','Normies');
     $this->data =  $this->session->userdata();
   }
@@ -40,9 +40,56 @@ class User
 
   public function property()
   {
-    $data['types'] = $this->PropertyType->getAllUnitType();
-    $this->session->set_userdata($data);
+    $this->data['types'] = $this->PropertyType->getAllUnitType();
+    $this->data['units'] = $this->UNITS->getUnitByOwner($this->data['id']);
+    $this->session->set_userdata($this->data);
   	$this->master('User/property',$this->data);
+  }
+
+  public function do_upload()
+  {
+    $config['upload_path'] = 'C:/xampp/htdocs/RentalFinder/propertyimages/';
+    $config['allowed_types'] = 'gif|jpg|png';
+    $config['max_size']  = '1024';
+    $config['max_width']  = '1024';
+    $config['max_height']  = '768';
+    $config['file_name'] = $this->input->post('propertyname').'.jpg';
+    
+    $this->load->library('upload', $config);
+    
+    if ( ! $this->upload->do_upload()){
+      $error = array('error' => $this->upload->display_errors());
+      $this->session->set_flashdata('message', '
+        <div class="alert alert-danger">
+          File too large
+        </div>
+        ');
+      redirect('User/Property');
+    }
+    else{
+      $data = array('upload_data' => $this->upload->data());
+      $newProperty = array(
+              'Unit_Name'=> $this->input->post('propertyname'),
+              'Unit_Description'=>$this->input->post('description'),
+              'Unit_Capacity'=>$this->input->post('capacity'),
+              'Unit_Amenities'=>$this->input->post('amenities'),
+              'Unit_Houserules'=>$this->input->post('houserules'),
+              'Unit_Picture'=>$this->input->post('propertyname').'.jpg',
+              'Unit_Lat'=>0.0,
+              'Unit_Long'=>0.0,
+              'Unit_Price'=>$this->input->post('price'),
+              'Unit_Type'=>$this->input->post('propertytype'),
+              'Owner_ID'=>$this->data['id']
+            );
+        $this->UNITS->insertUnit($newProperty);
+        $this->session->set_flashdata('message', '
+                <div class="alert alert-info">
+                  '.$newProperty['Unit_Name'].' succesfully added
+                </div>
+        ');
+
+        redirect('User/Property');
+    }
   }
 
   public function inbox()

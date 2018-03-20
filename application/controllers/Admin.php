@@ -11,8 +11,17 @@ class Admin extends CI_Controller {
       		redirect('');
     	}
     	$this->load->model('UserModel','Users');
+    	$this->load->model('UnitModel','UNITS');
     	$this->load->model('UnitTypeModel','Unit_types');
     	$this->data =  $this->session->userdata();
+	}
+	public function Users($id){
+		$this->data['properties'] = $this->UNITS->getPropertiesById($id);
+		$this->master('Admin/ViewUser',$this->data);
+	}
+	public function Property_type($type)
+	{
+		$this->master('Admin/Property_type',$this->data);
 	}
 
 	private function master($page,$data = null)

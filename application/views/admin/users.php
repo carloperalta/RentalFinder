@@ -19,9 +19,15 @@
                 <td><?php echo $row->user_type ?></td>
                 <td><?php echo $row->Number ?> </td>
                 <td>
-                    <button class="btn btn-info">View</button>
-                    <button class="btn btn-primary">Edit</button>
-                    <button class="btn btn-danger">Delete</button>
+                    <?php if($row->user_type == "ADMIN"){ ?>
+                        <button class="btn btn-danger">Delete</button>
+                    <?php }else{ ?>
+                        <a href="<?php echo base_url('Admin/Users/').$row->id?>" class="btn btn-info">
+                            View
+                        </a> 
+                        <button class="btn btn-primary">Edit</button>
+                        <button class="btn btn-danger">Delete</button>
+                    <?php } ?>
                 </td>       
             </tr>
             <?php } ?>      

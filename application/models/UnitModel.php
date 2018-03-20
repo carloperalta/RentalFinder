@@ -5,7 +5,7 @@ class UnitModel extends CI_Model {
 
 	public $PRIMARY_KEY = 'Unit_ID';
 	public $TABLE_NAME = 'unit';
-	public $OWNER_ID ='Owner_ID'
+	public $OWNER_ID ='Owner_ID';
 
 	public function getAllUnit()
 	{
@@ -18,10 +18,17 @@ class UnitModel extends CI_Model {
 
 	public function getUnitByOwner($id)
 	{
-		$this->db->select(*);
+		$this->db->select("*");
 		$this->db->from($this->TABLE_NAME);
 		$this->db->where($this->OWNER_ID, $id);
 
+		return $this->db->get()->result();
+	}
+	public function getPropertiesById($id)
+	{
+		$this->db->select('*');
+		$this->db->from($this->TABLE_NAME);
+		$this->db->where('Owner_ID', $id);
 		return $this->db->get()->result();
 	}
 

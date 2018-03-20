@@ -31,41 +31,59 @@
 <div class="modal fade" id="addPropertyModal" role="dialog">
         <div class="modal-dialog modal-lg" role="document">
           <div class="modal-content" >
-            <form method="post" action="">
+            <?php echo form_open_multipart('User/do_upload');?>
                 <div class="modal-header">
                     <h1>Add Property</h1>
                 </div>
                 <div class="modal-body">
-                    <div class="form-group">
-                        <label for="name">Property Name</label>
-                        <input type="text" name="propertyname" required="" class="form-control border-input">
-                    </div>
-                    <div class="form-group">
-                        <label for="gender">Property Type</label>
-                        <select name="gender" class="form-control border-input" id="gender">
+                    <div class="container-fluid">
                         
-                        <?php foreach ($types as $type => $name){
-                    echo "<option value=". $name->type_name .">". $name->type_name ."</option>";
-                         } ?>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <div class="col-md-12">
-                            <div class="row">
-                                <div class="well">
-                                    <!-- ADD MAP HERE!!!!-->
-                                </div>
-                            </div>
+                        <div class="form-group">
+                            <label for="propertytype">Property Type</label>
+                            <select name="propertytype" class="form-control border-input" id="propertytype">
+                            
+                            <?php foreach ($types as $type => $name){
+                                echo "<option value=".$name->type_name.">". $name->type_name ."</option>";
+                             } ?>
+                            </select>
                         </div>
+                        <div class="form-group">
+                            <label for="propertyname">Property Name</label>
+                            <input type="text" name="propertyname" required="" class="form-control border-input">
+                        </div>
+                        <div class="form-group">
+                            <label>Picture</label>
+                            <input type="file" name="userfile" class="form-control-file">                       
+                        </div>
+
+                        <div class="form-group">
+                            <label for="description">Description</label>
+                            <textarea name="description" class="form-control border-input" rows="5" id="description" required=""></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="houserules">House Rules</label>
+                            <textarea name="houserules" class="form-control border-input" rows="5" id="houserules" required=""></textarea>
+                        </div>
+                        <div class="form-group">
+                          <label for="amenities">Amenities</label>
+                          <textarea class="form-control border-input" rows="5" name="amenities"id="amenities" required=""></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="capacity">Capacity</label>
+                            <input type="number" name="capacity" class="form-control border-input" required="">
+                        </div> 
+                        <div class="form-group">
+                            <label for="price">Price</label>
+                            <input type="number" name="price" class="form-control border-input" required="">
+                        </div>   
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button class="btn btn-primary float-right">Add</button>
+                    <input type="submit" name="register" class="btn btn-primary float-left" value="Confirm">
                     <button class="btn btn-danger" data-dismiss="modal">Cancel</button>
                 </div>
             </div>
-            </form>
+            <?php echo form_close(); ?>
 
             </div>
           </div>

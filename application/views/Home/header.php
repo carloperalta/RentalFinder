@@ -20,7 +20,7 @@
   <meta name="twitter:card" content="" />
 
 
-  <link rel="shortcut icon" href="favicon.ico">
+  <link rel="shortcut icon" href="<?php echo base_url('rental_logo.png'); ?>">
   <link href='https://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
    
   <link rel="stylesheet" href="<?php echo base_url();?>assets/css/animate.css">

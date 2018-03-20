@@ -18,7 +18,7 @@
 					<td> <?php echo $value->type_name; ?></td>
 					<td> <?php echo $value->Number ?></td>
 					<td>
-					<a href="<?php echo base_url('Admin/View/'.$value->type_name) ?>" class ="btn btn-primary">
+					<a href="<?php echo base_url('Admin/Property_type/'.$value->type_name) ?>" class ="btn btn-primary">
 							View
 					</a>
 					</td>

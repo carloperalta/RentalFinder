@@ -31,10 +31,10 @@
 					<td>alyssa@gmail.com</td>
 					<td>3/20/2018</td>
 					<td>PAID</td>
-					<td>
-						<a href="" class="btn disabled">
-							Send Invoice
-						</a> 
+					<td> 
+						<a href="" class="btn btn-danger">
+							Delete
+						</a>
 					</td>
 				</tr>
 			</tbody>
