@@ -72,7 +72,7 @@ function searchFilter(page_num) {
 	var sortBy = $('#sortBy').val();
 	$.ajax({
 		type: 'POST',
-		url: '<?php echo base_url(); ?>posts/ajaxPaginationData/'+page_num,
+		url: '<?php echo base_url(); ?>rent/ajaxPaginationData/'+page_num,
 		data:'page='+page_num+'&keywords='+keywords+'&sortBy='+sortBy,
 		beforeSend: function () {
 			//$('.loading').show();
@@ -99,8 +99,8 @@ function searchFilter(page_num) {
 			</select>
 		</div>
         <div class="post-list" id="postList">
-            <?php if(!empty($posts)): foreach($posts as $post): ?>
-                <div class="list-item"><a href="javascript:void(0);"><h2><?php echo $post['title']; ?></h2></a></div>
+            <?php if(!empty($unit)): foreach($unit as $un): ?>
+                <div class="list-item"><a href="<?php echo base_url().'rent/'.$un['Unit_Name']; ?>"><h2><?php echo $un['Unit_Name']; ?></h2></a></div>
             <?php endforeach; else: ?>
             <p>Post(s) not available.</p>
             <?php endif; ?>

@@ -5,16 +5,16 @@ class Post extends CI_Model{
      */
     function getRows($params = array()){
         $this->db->select('*');
-        $this->db->from('posts');
+        $this->db->from('unit');
         //filter data by searched keywords
         if(!empty($params['search']['keywords'])){
-            $this->db->like('title',$params['search']['keywords']);
+            $this->db->like('Unit_Name',$params['search']['keywords']);
         }
         //sort data by ascending or desceding order
         if(!empty($params['search']['sortBy'])){
-            $this->db->order_by('title',$params['search']['sortBy']);
+            $this->db->order_by('Unit_Name',$params['search']['sortBy']);
         }else{
-            $this->db->order_by('id','desc');
+            $this->db->order_by('Unit_ID','desc');
         }
         //set start and limit
         if(array_key_exists("start",$params) && array_key_exists("limit",$params)){
