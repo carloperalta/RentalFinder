@@ -13,8 +13,9 @@ class Rent extends CI_Controller {
     
     public function index($Unit_Name=false){
         if($Unit_Name){
-            
-            
+
+            $data['unit']=$this->post->getdata($Unit_Name);
+            $this->load->view('rent/content', $data);
         }else{
             $data = array();
             

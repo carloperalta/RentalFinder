@@ -27,5 +27,9 @@ class Post extends CI_Model{
         //return fetched data
         return ($query->num_rows() > 0)?$query->result_array():FALSE;
     }
+    function getdata($unitname){
+        $query=$this->db->where('Unit_Name',$unitname)->get('unit')->row_array();
+        return $query;
+    }
 
 }
