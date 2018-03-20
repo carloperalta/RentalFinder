@@ -9,6 +9,7 @@ class Home extends CI_Controller{
 
   public function Rent()
   {
+    $this->load->view('posts/index');
   }
   public function contact_us()
   {

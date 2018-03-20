@@ -5,29 +5,25 @@
 		<table class="table">
 			<thead>
 				<tr>
-					<th>Id</th>
+					<th>ID</th>
 					<th>Property type</th>
 					<th>Number of properties</th>
 					<th>Action</th>
 				</tr>
 			</thead>
 			<tbody>
+				<?php foreach ($unit_types as $key => $value) { ?>
 				<tr>
-					<td>1</td>
-					<td>Condominium</td>
-					<td>5</td>
+					<td> <?php echo $value->type_id; ?></td>
+					<td> <?php echo $value->type_name; ?></td>
+					<td> <?php echo $value->Number ?></td>
 					<td>
-						<button class="btn btn-primary">View</buttons>
+					<a href="<?php echo base_url('Admin/View/'.$value->type_name) ?>" class ="btn btn-primary">
+							View
+					</a>
 					</td>
 				</tr>
-				<tr>
-					<td>2</td>
-					<td>Dormitory</td>
-					<td>2</td>
-					<td>
-						<button class="btn btn-primary">View</buttons>
-					</td>
-				</tr>	
+				<?php } ?>	
 			</tbody>
 		</table>			
 	</div>

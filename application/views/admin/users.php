@@ -18,7 +18,7 @@
                 <td><?php echo $row->name ?> </td>
                 <td><?php echo $row->email ?></td>
                 <td><?php echo $row->user_type ?></td>
-                <td><?php echo "-" ?> </td>
+                <td><?php echo $row->Number ?> </td>
                 <td>
                     <button class="btn btn-info">View</button>
                     <button class="btn btn-primary">Edit</button>
