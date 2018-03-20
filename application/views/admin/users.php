@@ -1,5 +1,4 @@
 <button class="btn btn-success" data-toggle="modal" data-target="#addusermodal">Add New <i class="icon-plus icon-white"></i></button>
-    
     <table class="table">
         <thead>
             <tr>
@@ -28,4 +27,3 @@
             <?php } ?>      
         </tbody>
 </table>
-        

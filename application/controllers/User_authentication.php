@@ -26,26 +26,26 @@ class User_Authentication extends CI_Controller
             $userData['locale'] = $userProfile['locale'];
             $userData['profile_url'] = 'https://www.facebook.com/'.$userProfile['id'];
             $userData['picture_url'] = $userProfile['picture']['data']['url'];
-			$userData['address'] = "";
-            $userData['contact'] = "";
-            $userData['about'] = "";
+			
             // Insert or update user data
             $userData['id']= $this->user->checkUser($userData);
 			// Check user data insert or update status
-            if(isset($userData['id'])){
+            if(!empty($userData['id'])){
                 $data['userData'] = $userData;
+                $userData['user_type'] = "USER";
             } else {
                $data['userData'] = array();
             }
+			
 			// Get logout URL
 			$data['logoutUrl'] = $this->facebook->logout_url();
 		}else{
             $fbuser = '';
+			
 			// Get login URL
             $data['authUrl'] =  $this->facebook->login_url();
         }
 		// Load login & profile view
-
         if(isset($userData['fullname'])){
                 $userData['FULLNAME'] = $userData['fullname'];
                 $userData['user_type'] = "USER";

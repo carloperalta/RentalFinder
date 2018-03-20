@@ -1,7 +1,4 @@
-  <?php $bgimage = base_url('assets/images/new2.jpg'); ?>
- 
- <div style="background-image: url('<?php echo $bgimage?>');background-attachment:fixed;height:100%; max-width: 100%; overflow-x: hidden;">
-   <div class="row">
+
   <div class="container" >
     <div class="row">
       <div class="col-md-12" style="margin:100px 0 0 0">
@@ -49,7 +46,10 @@
           </div>
           </div>
         </div>
+          
+
       </div>
+
     </div>
   </div>
 </div>

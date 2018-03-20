@@ -27,5 +27,9 @@ class Post extends CI_Model{
         //return fetched data
         return ($query->num_rows() > 0)?$query->result_array():FALSE;
     }
+    function getPost($title='false'){
+                $this->db->where('title',$title);
+            return $this->db->get('posts')->row_array();
+    }
 
 }
