@@ -15,6 +15,22 @@ class Admin extends CI_Controller {
     	$this->load->model('UnitTypeModel','Unit_types');
     	$this->data =  $this->session->userdata();
 	}
+	public function addPropertyType()
+	{
+		if ($this->input->post('Confirm')) {
+			$type = $this->input->post('propertytype');
+			$newPropertyType = array('type_name' => $type);
+			$this->Unit_types->addModelType($newPropertyType);
+			$this->session->set_flashdata('message', '
+				<div class="alert alert-info">
+					Succesfully Added!
+				</div>
+
+				');
+			redirect('Admin/property');
+		}
+		redirect('Admin/property');
+	}
 	public function Users($id){
 		$this->data['properties'] = $this->UNITS->getPropertiesById($id);
 		$this->master('Admin/ViewUser',$this->data);
@@ -50,6 +66,10 @@ class Admin extends CI_Controller {
 	{
 		$this->session->sess_destroy();
 		redirect('');
+	}
+	public function view()
+	{
+		$this->master('admin/type');
 	}
 
 

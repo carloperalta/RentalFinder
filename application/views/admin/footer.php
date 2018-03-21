@@ -32,7 +32,7 @@
 <div class="modal fade" id="addpropertymodal" role="dialog">
         <div class="modal-dialog">
           <div class="modal-content">
-            <form method="post" action="">
+            <form method="post" action="<?php echo base_url('Admin/addPropertyType') ?>">
                 <div class="modal-header">
                     <h1>Add Property Type</h1>
                 </div>
@@ -44,7 +44,7 @@
                 </div>
                 
                 <div class="modal-footer">
-                    <button class="btn btn-primary float-right">Confirm</button>
+                    <input type="submit" name="Confirm" value="Confirm" class="btn btn-primary">
                 </div>
             </div>
             </form>

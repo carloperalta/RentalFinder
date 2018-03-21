@@ -50,9 +50,9 @@
 
             <ul class="nav">
                 <li>
-                    <a href=" ">
+                    <a href="<?php echo base_url('Admin/View'); ?>">
                         <i class="ti-panel"></i>
-                        <p>Homepage</p>
+                        <p>Manage Homepage</p>
                     </a>
                 </li>
                 <li>

@@ -11,6 +11,10 @@ class UnitTypeModel extends CI_Model {
 		$this->db->from($this->TABLE_NAME);
 		return $this->db->get()->result();
 	}
+	public function addModelType($value = array())
+	{
+		return $this->db->insert($this->TABLE_NAME, $value);
+	}
 
 	public function getUnitTypeAndNumber()
 	{

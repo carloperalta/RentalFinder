@@ -9,7 +9,12 @@ class Home extends CI_Controller{
 
   public function Rent()
   {
-    $this->load->view('posts/index');
+    $this->master('rent/index');
+  }
+
+  public function Property($property)
+  {
+    $this->master('Home/property');
   }
   public function contact_us()
   {

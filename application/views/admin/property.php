@@ -3,6 +3,9 @@
 <div class="row">
 	<div class="col-md-12">
 		<table class="table">
+			<?php if ($this->session->flashdata('message')) {
+				echo $this->session->flashdata('message');
+			} ?>
 			<thead>
 				<tr>
 					<th>ID</th>
