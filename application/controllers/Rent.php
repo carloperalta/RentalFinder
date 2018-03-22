@@ -52,8 +52,7 @@ class Rent extends CI_Controller {
     }
     function occupy(){
         $this->rentmodel->add();
-   
-        redirect( $this->session->userdata('user_type').'/notifications');
+        redirect( $this->session->userdata('user_type').'/inbox');
     }
     function ajaxPaginationData(){
         $conditions = array();

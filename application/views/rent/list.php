@@ -100,8 +100,9 @@
                                                                                     <h5><a href=""> <?php echo $un['Unit_Name']; ?> </a></h5>
                                                                                     <div class="dot-hr"></div>
                                                                                     <span class="pull-left"><b> Area :</b> 120m </span>
-                                                                                    <span class="proerty-price pull-right"> $ 300,000</span>
-                                                                                    <p style="display: none;">Suspendisse ultricies Suspendisse ultricies Nulla quis dapibus nisl. Suspendisse ultricies commodo arcu nec pretium ...</p>
+                                                                                      <span class="proerty-price pull-right">$<?= $un['Unit_Price']?></span>
+                                                                                    <p style="display: none;"><?= $un['Unit_Houserules']?></p>
+                                                                                    <p style="display: none;"><?= $un['Unit_Amenities']?></p>
                                                                                     <div class="property-icon">
                                                                                         <img src="<?php echo base_url();?>assets/rent/assets/img/icon/bed.png">(5)|
                                                                                         <img src="<?php echo base_url();?>assets/rent/assets/img/icon/shawer.png">(2)|

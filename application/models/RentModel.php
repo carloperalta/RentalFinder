@@ -12,6 +12,10 @@ date_default_timezone_set('Asia/Manila');
         	'tenant_id'=>$_POST['tenant_id']
     	));
 	}
+	function notif($id){
+		$this->db->join('unit','unit.Unit_ID = rent.unit_id','left');
+		return $query=$this->db->get_where('rent',array('tenant_id'=>$id))->result_array();
+	}
 }
 
 /* End of file UnitModel.php */
