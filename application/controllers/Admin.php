@@ -12,8 +12,16 @@ class Admin extends CI_Controller {
     	}
     	$this->load->model('UserModel','Users');
     	$this->load->model('UnitModel','UNITS');
+    	$this->load->model('InvoiceModel','invoice');
     	$this->load->model('UnitTypeModel','Unit_types');
     	$this->data =  $this->session->userdata();
+	}
+	public function deleteuser($id){
+			$deleted = $this->Users->deleteUser($id);
+			if ($deleted) {
+			$this->session->set_flashdata('message', '<div class="alert alert-danger">User Deleted</div>');
+			}
+		redirect('Admin');
 	}
 
 	public function adduser()
@@ -44,6 +52,7 @@ class Admin extends CI_Controller {
       }
       redirect('Admin');
 	}
+
 	public function addPropertyType()
 	{
 		if ($this->input->post('Confirm')) {
@@ -56,14 +65,15 @@ class Admin extends CI_Controller {
 				</div>
 
 				');
-			redirect('Admin/property');
 		}
 		redirect('Admin/property');
 	}
+
 	public function Users($id){
 		$this->data['properties'] = $this->UNITS->getPropertiesById($id);
 		$this->master('Admin/ViewUser',$this->data);
 	}
+
 	public function Property_type($type)
 	{
 		$this->data['properties'] = $this->UNITS->getPropertiesByType($type);
@@ -78,6 +88,7 @@ class Admin extends CI_Controller {
 	}
 	public function invoice()
 	{
+		$this->data['invoices'] = $this->invoice->getInvoice();
 		$this->master('admin/invoice',$this->data);
 	}
 

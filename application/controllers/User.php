@@ -8,6 +8,7 @@ class User extends CI_Controller{
     if ($this->session->userdata('user_type') != 'USER') {
       redirect('');
     }
+    $this->load->model('InvoiceModel','Invoices');
     $this->load->model('UnitTypeModel','PropertyType');
     $this->load->model('UnitModel','UNITS');
     $this->load->model('UserModel','Normies');
@@ -35,6 +36,7 @@ class User extends CI_Controller{
 
   public function tenant_list()
   {
+    $this->data['tenants'] = $this->Invoices->getMyTenants($this->data['id']);
   	$this->master('User/tenants',$this->data);
   }
 
@@ -53,7 +55,7 @@ class User extends CI_Controller{
     $config['max_size']  = '2048';
     $config['max_width']  = '2048';
     $config['max_height']  = '2048';
-    $config['file_name'] = $this->input->post('propertyname').'.jpg';
+    $config['file_name'] = $this->data['id'].'.jpg';
     
     $this->load->library('upload', $config);
     
@@ -74,7 +76,7 @@ class User extends CI_Controller{
               'Unit_Capacity'=>$this->input->post('capacity'),
               'Unit_Amenities'=>$this->input->post('amenities'),
               'Unit_Houserules'=>$this->input->post('houserules'),
-              'Unit_Picture'=>$this->input->post('propertyname').'.jpg',
+              'Unit_Picture'=>$this->data['id'].'.jpg',
               'Unit_Lat'=>0.0,
               'Unit_Long'=>0.0,
               'Unit_Price'=>$this->input->post('price'),

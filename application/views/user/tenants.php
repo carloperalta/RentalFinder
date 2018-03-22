@@ -11,13 +11,23 @@
                         <table class="table table-striped">
                             <thead>
                                 <th>Name</th>
-                                <th>Rent</th>
                                 <th>Starting Date</th>
                                 <th>Due Date</th>
-                                <th>Unit Type</th>
+                                <th>Property</th>
+                                <th>Totalamount</th>
+                                <th>Status</th>
                             </thead>
                             <tbody>
-
+                                <?php foreach ($tenants as $key => $value): ?>
+                                    <tr>
+                                        <td><?php echo $value->name;?></td>
+                                        <td><?php echo $value->start;?></td>
+                                        <td><?php echo $value->due;?></td>
+                                        <td><?php echo $value->Unit_Name;?></td>
+                                        <td><?php echo $value->totalamount;?></td>
+                                        <td><?php echo $value->status?></td>
+                                    </tr>
+                                <?php endforeach ?>
                             </tbody>
                         </table>
                     </div>

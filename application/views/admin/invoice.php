@@ -4,39 +4,42 @@
 		<table class="table">
 			<thead>
 				<tr>
-					<th>ID</th>
 					<th>Name</th>
-					<th>Email</th>
-					<th>Due Date</th>
+					<th>Unit</th>
+					<th>Start Date</th>
+					<th>DueDate</th>
 					<th>Status</th>
 					<th>Action</th>
 				</tr>
 			</thead>
 			<tbody>
+				<?php foreach ($invoices as $key => $invoice): ?>
+					
 				<tr>
-					<td>2</td>
-					<td>Carlo Rafael Peralta</td>
-					<td>carlorap0613@gmail.com</td>
-					<td>3/20/2018</td>
-					<td>PENDING</td>
+					<td><?php echo $invoice->name ?></td>
+					<td><?php echo $invoice->unit ?></td>
+					<td><?php echo $invoice->start ?></td>
+					<td><?php echo $invoice->due ?></td>
+					<td><?php echo $invoice->status ?></td>
+					<?php if ($invoice->status=="PENDING"): ?>
+						
 					<td>
 						<a href="" class="btn btn-primary">
 							Send Invoice
 						</a> 
 					</td>
-				</tr>
-				<tr>
-					<td>3</td>
-					<td>Alyssa Anne A. Lababit</td>
-					<td>alyssa@gmail.com</td>
-					<td>3/20/2018</td>
-					<td>PAID</td>
-					<td> 
+					<?php else: ?>
+
+					<td>
 						<a href="" class="btn btn-danger">
-							Delete
-						</a>
+							Delte
+						</a> 
 					</td>
+					<?php endif ?>
 				</tr>
+
+
+				<?php endforeach ?>
 			</tbody>
 		</table>			
 	</div>

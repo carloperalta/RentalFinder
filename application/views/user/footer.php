@@ -53,7 +53,7 @@
                         </div>
                         <div class="form-group">
                             <label>Picture</label>
-                            <input type="file" name="userfile" class="form-control-file">                       
+                            <input type="file" name="userfile" class="form-control-file" required="">                       
                         </div>
 
                         <div class="form-group">
@@ -73,7 +73,7 @@
                             <input type="number" name="capacity" class="form-control border-input" required="">
                         </div> 
                         <div class="form-group">
-                            <label for="price">Price</label>
+                            <label for="price">Rate per month</label>
                             <input type="number" name="price" class="form-control border-input" required="">
                         </div>   
                     </div>
