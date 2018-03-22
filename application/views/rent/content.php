@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -60,7 +61,10 @@
                           <li class="cta"><a href="<?php echo base_url('Register') ?>">Signup</a></li>
                           <?php } else{ ?>
                           <?php echo "<li><a href=\"".base_url($user_type)."\">".$FULLNAME."</a></li>"; ?>
-                          <li><a href="<?php echo base_url('Rent'); ?>">Rent</a></li>
+                          <li><a href="<?php echo base_url('Rent'
+
+
+                          ); ?>">Rent</a></li>
                           <li><a href="">Promo</a></li>
                           <li class="cta"> <a href="<?php echo base_url('User/logout'); ?>">Logout</a></li>
                         <?php } ?>
@@ -90,7 +94,9 @@
 					<div class="fh5co-property">
 						<figure>
 							<img src='<?php echo base_url().'propertyimages/'.$unit['Unit_Picture']?>' style="height: auto; width: 100%;">
-							<a href="#" class="tag">For Rent</a>
+              <a href='' class="tag" data-toggle='modal' data-target="#rentmodal">Rent</a>
+							
+
 						</figure>
 						<div class="fh5co-property-innter" >
 							<div class="price-status">
@@ -160,9 +166,41 @@
     </div>
   </div>
 </div>
+<div class="modal" tabindex="-1" role="dialog" id="rentmodal">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <form action="<?php echo base_url()?>rent/occupy" method="post">
+        <div class="modal-header">
+          <h5 class="modal-title">Rent</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          
+                    <label class="radio-inline">
+                      <input type="radio" name="rent_type" value="Monthly">Monthly
+                    </label>
+                    <label class="radio-inline">
+                      <input type="radio" name="rent_type" value="Quarterly">Quarterly
+                    </label>
+                    <label class="radio-inline">
+                      <input type="radio" name="rent_type" value="Yearly">Yearly
+                    </label>
+                  <input type="hidden" name="Unit_ID" value="<?php echo $unit['Unit_ID']?>">
+                  <input type="hidden" name="Unit_Type" value="<?php echo $unit['Unit_Type']?>">
+                  <input type="hidden" name="tenant_id" value="<?php echo $id?>">
+        </div>
+        <div class="modal-footer">
+          
+          <input type="submit" value="Rent" class="btn btn-primary" style="border-style: none">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
 
-
-</body>
 
   <!-- jQuery -->
   <script type="text/javascript"\ href="<?php echo base_url('assets/js/jquery.min.js');?>"></script>
