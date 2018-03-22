@@ -7,6 +7,7 @@ class Rent extends CI_Controller {
     function __construct() {
         parent::__construct();
         $this->load->model('post');
+        $this->load->model('rentmodel');
         $this->load->library('Ajax_pagination');
         $this->perPage = 2;
     }
@@ -14,6 +15,7 @@ class Rent extends CI_Controller {
     public function index($Unit_Name=false){
         if($Unit_Name){
 
+    $data = $this->session->userdata();
             $data['unit']=$this->post->getdata($Unit_Name);
             $this->load->view('rent/content', $data);
         }else{
@@ -38,7 +40,10 @@ class Rent extends CI_Controller {
             $this->load->view('rent/index', $data);
         }
     }
-    
+    function occupy(){
+        $this->rentmodel->add();
+        redirect('rent');
+    }
     function ajaxPaginationData(){
         $conditions = array();
         
