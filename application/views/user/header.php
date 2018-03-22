@@ -28,25 +28,6 @@
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Muli:400,300' rel='stylesheet' type='text/css'>
     <link href="<?php echo base_url('assets/css/themify-icons.css'); ?>" rel="stylesheet">
-    
-     <link rel="shortcut icon" href="<?php echo base_url();?>assets/rent/favicon.ico" type="image/x-icon">
-        <link rel="icon" href="<?php echo base_url();?>assets/rent/favicon.ico" type="image/x-icon">
-
-        <link rel="stylesheet" href="<?php echo base_url();?>assets/rent/assets/css/normalize.css">
-        <link rel="stylesheet" href="<?php echo base_url();?>assets/rent/assets/css/font-awesome.min.css">
-        <link rel="stylesheet" href="<?php echo base_url();?>assets/rent/assets/css/fontello.css">
-        <link href="<?php echo base_url();?>assets/rent/assets/fonts/icon-7-stroke/css/pe-icon-7-stroke.css" rel="stylesheet">
-        <link href="<?php echo base_url();?>assets/rent/assets/fonts/icon-7-stroke/css/helper.css" rel="stylesheet">
-        <link href="<?php echo base_url();?>assets/rent/assets/css/animate.css" rel="stylesheet" media="screen">
-        <link rel="stylesheet" href="<?php echo base_url();?>assets/rent/assets/css/bootstrap-select.min.css"> 
-        <link rel="stylesheet" href="<?php echo base_url();?>assets/rent/bootstrap/css/bootstrap.min.css">
-        <link rel="stylesheet" href="<?php echo base_url();?>assets/rent/assets/css/icheck.min_all.css">
-        <link rel="stylesheet" href="<?php echo base_url();?>assets/rent/assets/css/price-range.css">
-        <link rel="stylesheet" href="<?php echo base_url();?>assets/rent/assets/css/owl.carousel.css">  
-        <link rel="stylesheet" href="<?php echo base_url();?>assets/rent/assets/css/owl.theme.css">
-        <link rel="stylesheet" href="<?php echo base_url();?>assets/rent/assets/css/owl.transitions.css">
-        <link rel="stylesheet" href="<?php echo base_url();?>assets/rent/assets/css/style.css">
-        <link rel="stylesheet" href="<?php echo base_url();?>assets/rent/assets/css/responsive.css">
 </head>
 <body>
 

@@ -7,7 +7,6 @@ class Rent extends CI_Controller {
     function __construct() {
         parent::__construct();
         $this->load->model('post');
-        $this->load->model('rentmodel');
         $this->load->library('Ajax_pagination');
         $this->perPage = 2;
     }
@@ -15,14 +14,10 @@ class Rent extends CI_Controller {
     public function index($Unit_Name=false){
         if($Unit_Name){
 
-    $data = $this->session->userdata();
             $data['unit']=$this->post->getdata($Unit_Name);
-            $this->load->view('rent/header');
-            $this->load->view('rent/list', $data);
-            $this->load->view('home/footer');
+            $this->load->view('rent/content', $data);
         }else{
             $data = array();
-    $data = $this->session->userdata();
             
             //total rows count
             $totalRec = count($this->post->getRows());
@@ -36,24 +31,14 @@ class Rent extends CI_Controller {
             $this->ajax_pagination->initialize($config);
             
             //get the posts data
-
-    $data = $this->session->userdata();
             $data['unit'] = $this->post->getRows(array('limit'=>$this->perPage));
-
-
+            
             //load the view
-            //print_r($data);
-            //exit();
-            $this->load->view('rent/header',$data);
-            $this->load->view('rent/list', $data);
-            $this->load->view('home/footer');
-            //$this->load->view('rent/index', $data);
+         
+            $this->load->view('rent/index', $data);
         }
     }
-    function occupy(){
-        $this->rentmodel->add();
-        redirect( $this->session->userdata('user_type').'/inbox');
-    }
+    
     function ajaxPaginationData(){
         $conditions = array();
         
