@@ -1,4 +1,3 @@
-DROP TABLE `ci_sessions`, `unit`, `unit_type`, `user`, `users`;
 
 CREATE TABLE IF NOT EXISTS `user`(
     id int PRIMARY KEY AUTO_INCREMENT,
