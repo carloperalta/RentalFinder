@@ -36,7 +36,13 @@
                 <input type="text" name="name" class="form-control" id="name" required >
                </div> 
 
-            
+            <!--  <div class="form-group">
+                <label for="gender">Gender:</label>
+                <select name="gender" class="form-control" id="gender" required>
+                  <option value="male">Male</option>
+                  <option value="female">Female</option>
+                </select>
+              </div>  -->
               <div class="form-group">
                 <label for="gender">Gender:</label> <br>
                 <input type="radio" name="gender" value="male" checked> Male<br>
