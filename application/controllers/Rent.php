@@ -17,9 +17,12 @@ class Rent extends CI_Controller {
 
     $data = $this->session->userdata();
             $data['unit']=$this->post->getdata($Unit_Name);
-            $this->load->view('rent/content', $data);
+            $this->load->view('rent/header');
+            $this->load->view('rent/list', $data);
+            $this->load->view('home/footer');
         }else{
             $data = array();
+    $data = $this->session->userdata();
             
             //total rows count
             $totalRec = count($this->post->getRows());
@@ -33,16 +36,24 @@ class Rent extends CI_Controller {
             $this->ajax_pagination->initialize($config);
             
             //get the posts data
+
+    $data = $this->session->userdata();
             $data['unit'] = $this->post->getRows(array('limit'=>$this->perPage));
-            
+
+
             //load the view
-         
-            $this->load->view('rent/index', $data);
+            //print_r($data);
+            //exit();
+            $this->load->view('rent/header',$data);
+            $this->load->view('rent/list', $data);
+            $this->load->view('home/footer');
+            //$this->load->view('rent/index', $data);
         }
     }
     function occupy(){
         $this->rentmodel->add();
-        redirect('rent');
+   
+        redirect( $this->session->userdata('user_type').'/notifications');
     }
     function ajaxPaginationData(){
         $conditions = array();
