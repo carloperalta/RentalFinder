@@ -94,8 +94,9 @@ class User extends CI_Controller{
     }
   }
 
-  public function inbox()
+  public function invoice()
   {
+    $this->data['invoice'] = $this->Invoices->getInvoice($this->data['id']);
   	$this->master('User/inbox',$this->data);
   }
 

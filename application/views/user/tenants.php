@@ -24,7 +24,7 @@
                                         <td><?php echo $value->start;?></td>
                                         <td><?php echo $value->due;?></td>
                                         <td><?php echo $value->Unit_Name;?></td>
-                                        <td><?php echo $value->totalamount;?></td>
+                                        <td>Php<?php echo $value->totalamount;?></td>
                                         <td><?php echo $value->status?></td>
                                     </tr>
                                 <?php endforeach ?>

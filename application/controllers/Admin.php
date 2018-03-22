@@ -88,7 +88,7 @@ class Admin extends CI_Controller {
 	}
 	public function invoice()
 	{
-		$this->data['invoices'] = $this->invoice->getInvoice();
+		$this->data['invoices'] = $this->invoice->getInvoices();
 		$this->master('admin/invoice',$this->data);
 	}
 

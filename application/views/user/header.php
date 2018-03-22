@@ -66,15 +66,15 @@
                     </a>
                 </li>
                 <li>
-                    <a href="<?php echo base_url('User/inbox'); ?>">
-                        <i class="ti-pencil-alt2"></i>
-                        <p>Inbox (Invoices)</p>
+                    <a href="<?php echo base_url('User/invoice'); ?>">
+                        <i class="ti-bell"></i>
+                        <p>Invoices</p>
                     </a>
                 </li>
                 <li>
                     <a href="<?php echo base_url('User/notifications'); ?>">
-                        <i class="ti-bell"></i>
-                        <p>Notifications</p>
+                        <i class="ti-pencil-alt2"></i>
+                        <p>Messages</p>
                     </a>
                 </li>
                 <li>
