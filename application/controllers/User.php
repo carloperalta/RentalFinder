@@ -11,6 +11,7 @@ class User extends CI_Controller{
     $this->load->model('UnitTypeModel','PropertyType');
     $this->load->model('UnitModel','UNITS');
     $this->load->model('UserModel','Normies');
+    $this->load->model('rentmodel');
     $this->data =  $this->session->userdata();
   }
 
@@ -94,7 +95,8 @@ class User extends CI_Controller{
 
   public function inbox()
   {
-  	$this->master('User/inbox',$this->data);
+      $this->data['notifications']= $this->rentmodel->notif($this->session->userdata('id'));
+    $this->master('User/inbox',$this->data);
   }
 
   public function maps()
@@ -103,8 +105,7 @@ class User extends CI_Controller{
   }
 
   public function notifications()
-  {
-  	$this->master('User/notifications',$this->data);
+  {  	$this->master('User/notifications',$this->data);
   }
 
   public function logout()
