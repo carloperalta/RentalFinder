@@ -50,9 +50,9 @@ class User extends CI_Controller{
   {
     $config['upload_path'] = 'C:/xampp/htdocs/RentalFinder/propertyimages/';
     $config['allowed_types'] = 'gif|jpg|png';
-    $config['max_size']  = '1024';
-    $config['max_width']  = '1024';
-    $config['max_height']  = '768';
+    $config['max_size']  = '2048';
+    $config['max_width']  = '2048';
+    $config['max_height']  = '2048';
     $config['file_name'] = $this->input->post('propertyname').'.jpg';
     
     $this->load->library('upload', $config);
