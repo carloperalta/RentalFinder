@@ -46,37 +46,41 @@
                 <div class="modal-footer">
                     <input type="submit" name="Confirm" value="Confirm" class="btn btn-primary">
                 </div>
-            </div>
             </form>
 
             </div>
+
+            </div>
           </div>
-    </div>
 
 <div class="modal fade" id="addusermodal" role="dialog">
         <div class="modal-dialog">
           <div class="modal-content">
-            <form method="post" action="">
+            <form method="post" action="<?php echo base_url('Admin/adduser') ?>">
                 <div class="modal-header">
                     <h1>Add new user</h1>
                 </div>
                 <div class="modal-body">
                     <div class="form-group">
                         <label for="name">Fullname</label>
-                        <input type="text" name="name" required="" class="form-control">
+                        <input type="text" name="name" required="" class="form-control border-input">
                     </div>
 
                     <div class="form-group">
                         <label for="email">Email</label>
-                        <input type="email" name="email" required="" class="form-control">
+                        <input type="email" name="email" required="" class="form-control border-input">
                     </div>
                     <div class="form-group">
                         <label for="password">Password:</label>
-                        <input type="password" name="password" required="" class="form-control">
+                        <input type="password" name="password" required="" class="form-control border-input">
                     </div>
                     <div class="form-group">
+                        <label for="confirmpassword">Confirm Password:</label>
+                        <input type="password" name="confirmpassword" required="" class="form-control border-input">
+                    </div>  
+                    <div class="form-group">
                         <label for="usertype">Usertype</label>
-                        <select name="usertype" class="form-control">
+                        <select name="usertype" class="form-control border-input">
                             <option>ADMIN</option>
                             <option>USER</option>
                         </select>
@@ -84,7 +88,7 @@
                 </div>
                 
                 <div class="modal-footer">
-                    <button class="btn btn-primary float-right">Confirm</button>
+                    <input type="submit" name="Confirm" value="Confirm" class="btn btn-primary float-right">
                 </div>
             </div>
             </form>

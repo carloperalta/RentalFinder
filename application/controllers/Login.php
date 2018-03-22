@@ -49,40 +49,9 @@ class Login extends CI_Controller{
      }else{
           $this->session->set_flashdata('error','<div class="alert alert-danger">Email or Password is Incorrect.</div>');
       }
-    }$userData = array();
+    }
+      $this->master('Home/login');
 
-    // Check if user is logged in
-    if($this->facebook->is_authenticated()){
-      $userProfile = $this->facebook->request('get', '/me?fields=id,first_name,last_name,email,gender,locale,picture');
-      // Get user facebook profile details
-            // Preparing data for database insertion
-            $userData['oauth_provider'] = 'facebook';
-            $userData['oauth_uid'] = $userProfile['id'];
-            $userData['fullname'] = $userProfile['first_name']." ".$userProfile['last_name'];
-            $userData['email'] = $userProfile['email'];
-            $userData['gender'] = $userProfile['gender'];
-            $userData['locale'] = $userProfile['locale'];
-            $userData['profile_url'] = 'https://www.facebook.com/'.$userProfile['id'];
-            $userData['picture_url'] = $userProfile['picture']['data']['url'];
-      
-            // Insert or update user data
-            $userData['id']= $this->user->checkUser($userData);
-      // Check user data insert or update status
-            if(!empty($userData['id'])){
-                $data['userData'] = $userData;
-            } else {
-               $data['userData'] = array();
-            }
-      
-      // Get logout URL
-      $data['logoutUrl'] = $this->facebook->logout_url();
-    }else{
-            $fbuser = '';
-      
-      // Get login URL
-            $data['authUrl'] =  $this->facebook->login_url();
-        }
-      $this->master('Home/login',$data);
+
 }
-
 }

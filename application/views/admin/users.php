@@ -1,4 +1,14 @@
-<button class="btn btn-success" data-toggle="modal" data-target="#addusermodal">Add New <i class="icon-plus icon-white"></i></button>    
+
+    <?php if ($this->session->flashdata('message')) {?>
+            <?php echo $this->session->flashdata('message'); ?>
+    <?php } ?>
+
+<div class="col-md-12">
+
+    <div class="col-md-6">
+        <button class="btn btn-success" data-toggle="modal" data-target="#addusermodal">Add New <i class="icon-plus icon-white"></i></button>    
+    </div>
+</div>
     <table class="table">
         <thead>
             <tr>
@@ -20,7 +30,11 @@
                 <td><?php echo $row->Number ?> </td>
                 <td>
                     <?php if($row->user_type == "ADMIN"){ ?>
-                        <button class="btn btn-danger">Delete</button>
+                        <?php if($id == $row->id){ ?>
+                            <button class="btn btn-danger disabled">Delete</button>
+                        <?php }else{ ?>
+                            <button class="btn btn-danger">Delete</button>
+                        <?php } ?>
                     <?php }else{ ?>
                         <a href="<?php echo base_url('Admin/Users/').$row->id?>" class="btn btn-info">
                             View

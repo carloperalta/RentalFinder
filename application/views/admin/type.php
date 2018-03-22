@@ -14,8 +14,6 @@
                                             <span class="pull-left"><b> Area :</b> 120m Bedroom(5)| Shower(2)|</span>
                                             <span class="proerty-price pull-right"> Php 300,000</span>
                                         </div>
-
-
                                     </div>
                                 </div> 
 

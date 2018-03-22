@@ -69,7 +69,8 @@ class UserModel extends CI_Model {
 				(SELECT Owner_ID, Count(unit_id) AS Total
 				From unit
 				Group By Owner_ID)Subtotal
-				ON user.id = Subtotal.Owner_ID";
+				ON user.id = Subtotal.Owner_ID
+				ORDER BY user.user_type";
 
 			$SQL = $this->db->query($query);
 			return $SQL->result();

@@ -31,6 +31,13 @@ class UnitModel extends CI_Model {
 		$this->db->where('Owner_ID', $id);
 		return $this->db->get()->result();
 	}
+	public function getPropertiesByType($type)
+	{
+		$this->db->select('*');
+		$this->db->from($this->TABLE_NAME);
+		$this->db->where('Unit_Type', $type);
+		return $this->db->get()->result();
+	}
 
 	public function insertUnit($data=array())
 	{

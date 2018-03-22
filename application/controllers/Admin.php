@@ -15,6 +15,35 @@ class Admin extends CI_Controller {
     	$this->load->model('UnitTypeModel','Unit_types');
     	$this->data =  $this->session->userdata();
 	}
+
+	public function adduser()
+	{
+		if($this->input->post('Confirm')){
+          $this->form_validation->set_rules('email', 'email', 'required|trim|is_unique[user.email]');
+          $this->form_validation->set_rules('password', 'password', 'required|trim');
+          $this->form_validation->set_rules('name', 'name', 'trim|required');
+          $this->form_validation->set_rules('confirmpassword', 'confirmpassword', 'trim|required|matches[password]');
+
+          $email = $this->input->post('email');
+          $this->session->set_flashdata('message','<div class="alert alert-danger">'.$email.' was already taken</div>');
+          if ($this->input->post('password') != $this->input->post('confirmpassword')) {
+          $this->session->set_flashdata('message','<div class="alert alert-danger">Password not match</div>');
+            # code...
+          }
+          if ($this->form_validation->run() == TRUE) {
+              $user = array(
+                'email' => $email,
+                'password' => hash('tiger192,3',$this->input->post('password')),
+                'user_type'=> $this->input->post('usertype'),
+                'name'=> $this->input->post('name'),
+              );
+              $isRegistered = $this->Users->insertUser($user);
+              
+              $this->session->set_flashdata('message','<div class="alert alert-primary">Successfully Registered!</div>');
+          }
+      }
+      redirect('Admin');
+	}
 	public function addPropertyType()
 	{
 		if ($this->input->post('Confirm')) {
@@ -37,7 +66,8 @@ class Admin extends CI_Controller {
 	}
 	public function Property_type($type)
 	{
-		$this->master('Admin/Property_type',$this->data);
+		$this->data['properties'] = $this->UNITS->getPropertiesByType($type);
+		$this->master('Admin/ViewUser',$this->data);
 	}
 
 	private function master($page,$data = null)
@@ -71,23 +101,6 @@ class Admin extends CI_Controller {
 	{
 		$this->master('admin/type');
 	}
-
-
-	function save(){
-		$user = array(
-			'fullname'=> $this->input->post('name'),
-			'password'=> hash('tiger192,3',$this->input->post('password')),
-			'email' => $this->input->post('email'),
-			'user_type' => $this->input->post('usertype')
-		);
-        $data=$this->Users->insertUser($user);
-        echo json_encode($data);
-    }
- 
-    function update(){
-        $data=$this->Users->updateUser();
-        echo json_encode($data);
-    }
 
 }
 
