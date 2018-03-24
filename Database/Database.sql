@@ -1,3 +1,4 @@
+DROP TABLE `ci_sessions`, `unit`, `unit_type`, `user`, `users`;
 
 CREATE TABLE IF NOT EXISTS `user`(
     id int PRIMARY KEY AUTO_INCREMENT,
@@ -14,10 +15,6 @@ CREATE TABLE IF NOT EXISTS `user`(
 CREATE TABLE IF NOT EXISTS `unit`(
     Unit_ID int PRIMARY KEY AUTO_INCREMENT,
 	Unit_Name varchar(255),
-	Unit_Description varchar(255),
-	Unit_Amenities varchar(255),
-	Unit_Houserules varchar(255),
-	Unit_Picture varchar(255),
     Unit_Lat double,
     Unit_Long double,
     Unit_Price double,
@@ -33,24 +30,10 @@ CREATE TABLE IF NOT EXISTS `ci_sessions` (
         KEY `ci_sessions_timestamp` (`timestamp`)
 );
 
-CREATE TABLE IF NOT EXISTS `rent`(
-	`id` INT PRIMARY KEY AUTO_INCREMENT,
-	`rent_date` DATETIME,
-	`rent_type` VARCHAR(20),
-	`tenant_id` INTEGER,
-	`unit_id` INTEGER
-);
-
-CREATE TABLE IF NOT EXISTS `invoice`(
-	`id` INT PRIMARY KEY AUTO_INCREMENT,
-	`duedate` DATETIME,
-	`totalamount` DOUBLE,
-	`status` VARCHAR(20),
-	`rent_id` INTEGER
-);
-
-CREATE TABLE `rentalfinder`.`unit_type` ( `type_id` INT PRIMARY KEY AUTO_INCREMENT , `type_name` VARCHAR(255) ) ENGINE = InnoDB;
+CREATE TABLE `rentalfinder`.`unit_type` ( `type_id` INT PRIMARY AUTO_INCREMENT , `type_name` VARCHAR(255) ) ENGINE = InnoDB;
  
+ALTER TABLE `unit` ADD `Unit_Description` VARCHAR(255) NOT NULL AFTER `Unit_Type`;
+
 ALTER TABLE `unit` ADD `Unit_Capacity` INT NOT NULL AFTER `Unit_Description`;
 
 ALTER TABLE `user` CHANGE `password` `password` VARCHAR(50) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL;
@@ -126,8 +109,8 @@ MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 
-INSERT INTO `user`(`id`, `email`, `password`, `user_type`, `name`, `gender`, `about`, `address`, `contact`) VALUES (1,'admin@gmail.com','d476a6b8b5c35ce912781497d02d09faeb8aa05a489223f5','ADMIN','Admin','MALE',null,null,null);
-INSERT INTO `unit_type`(`type_id`, `type_name`) VALUES (1,"Apartment")
+INSERT INTO `user`(`id`, `email`, `password`, `user_type`, `name`, `gender`, `about`, `address`, `contact`) VALUES (1,'admin@gmail.com','d476a6b8b5c35ce912781497d02d09faeb8aa05a489223f5','ADMIN','Admin','MALE',null,null,null)
+
 
 
  

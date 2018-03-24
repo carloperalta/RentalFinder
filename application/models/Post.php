@@ -23,6 +23,7 @@ class Post extends CI_Model{
             $this->db->limit($params['limit']);
         }
         //get records
+    
         $query = $this->db->get();
         //return fetched data
         return ($query->num_rows() > 0)?$query->result_array():FALSE;

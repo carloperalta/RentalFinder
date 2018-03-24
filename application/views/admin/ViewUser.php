@@ -7,7 +7,7 @@
 
         <div class="box-two proerty-item">
             <div class="item-thumb">
-              <img src="<?php echo base_url() ?>assets/img/demo/property-1.jpg" alt="Property picture" class="img-responsive">
+              <img src="<?php echo base_url().'propertyimages/'.$property->Unit_Picture?>" alt="Property picture" class="img-responsive">
             </div>
 
             <div class="item-entry overflow">
