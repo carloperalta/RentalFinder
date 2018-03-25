@@ -13,6 +13,16 @@ class Rentmodel extends CI_Model {
          $this->db->insert('rent',$insertThis);
          return $this->db->insert_id();
 	}
+	public function getAllForRent()
+	{
+		$query = "SELECT unit.unit_id,unit.Unit_Name,unit.Unit_Description,unit.Unit_Amenities,unit.Unit_Houserules,unit.Unit_Capacity,COUNT(rent.id) AS Rents 
+			FROM rent 
+			INNER JOIN unit ON 
+			unit.Unit_ID = rent.unit_id
+			GROUP BY unit_id
+			";
+		print_r($this->db->query($query)->result());
+	}
 
 	
 	function notif($id){

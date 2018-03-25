@@ -55,7 +55,7 @@ class User extends CI_Controller{
     $config['max_size']  = '2048';
     $config['max_width']  = '2048';
     $config['max_height']  = '2048';
-    $config['file_name'] = $this->data['id'].'.jpg';
+    $config['file_name'] = str_replace(' ','_',$this->input->post('propertyname')).$this->data['id'].'.jpg';
     
     $this->load->library('upload', $config);
     
@@ -76,7 +76,7 @@ class User extends CI_Controller{
               'Unit_Capacity'=>$this->input->post('capacity'),
               'Unit_Amenities'=>$this->input->post('amenities'),
               'Unit_Houserules'=>$this->input->post('houserules'),
-              'Unit_Picture'=>$this->data['id'].'.jpg',
+              'Unit_Picture'=>str_replace(' ','_',$this->input->post('propertyname')).$this->data['id'].'.jpg',
               'Unit_Lat'=>0.0,
               'Unit_Long'=>0.0,
               'Unit_Price'=>$this->input->post('price'),

@@ -52,8 +52,6 @@
                      <ul >
                         <?php if(!isset($FULLNAME)){ ?>
                           <li><a href="<?php echo base_url('Rent'); ?>">Rent</a></li>
-                          <li><a href="">Promo</a></li>
-                          <li><a href="">Contact Us</a></li>
                           <li class="cta">
                             <a href="<?php echo base_url('Login'); ?>">Login</a>
                           </li>
@@ -61,7 +59,6 @@
                           <?php } else{ ?>
                           <?php echo "<li><a href=\"".base_url($user_type)."\">".$FULLNAME."</a></li>"; ?>
                           <li><a href="<?php echo base_url('Rent'); ?>">Rent</a></li>
-                          <li><a href="">Promo</a></li>
                           <li class="cta"> <a href="<?php echo base_url('User/logout'); ?>">Logout</a></li>
                         <?php } ?>
                      </ul>

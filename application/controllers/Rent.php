@@ -93,8 +93,10 @@ class Rent extends CI_Controller {
         }
         
         //total rows count
-        $totalRec = count($this->post->getRows($conditions));
-        
+        if($this->post->getRows($conditions))
+            $totalRec = count($this->post->getRows($conditions));
+        else
+            $totalRec = 0;
         //pagination configuration
         $config['target']      = '#postList';
         $config['base_url']    = base_url().'rent/ajaxPaginationData';
